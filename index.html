@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linha do Tempo - Pesquisa Mandioca no Amapá</title>
 
-    <!-- Ícone Quadrado Proporcional com Margem (Favicon e Atalho Mobile) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23ffffff'/%3E%3Cimage href='https://upload.wikimedia.org/wikipedia/commons/e/ec/Embrapa_-_Marca.png' x='64' y='140' width='384' height='232' preserveAspectRatio='xMidYMid meet'/%3E%3C/svg%3E">
-    <link id="appAppleIcon" rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23ffffff'/%3E%3Cimage href='https://upload.wikimedia.org/wikipedia/commons/e/ec/Embrapa_-_Marca.png' x='64' y='140' width='384' height='232' preserveAspectRatio='xMidYMid meet'/%3E%3C/svg%3E">
+    <!-- Ícone Vetorial Autossuficiente da Embrapa (Favicon e Atalho Mobile) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='100' fill='%2300563B'/%3E%3Ctext x='50%25' y='45%25' font-family='Arial, sans-serif' font-weight='bold' font-size='110' fill='%23ffffff' text-anchor='middle'%3EEMBRAPA%3C/text%3E%3Ctext x='50%25' y='68%25' font-family='Arial, sans-serif' font-weight='500' font-size='50' fill='%2381c784' text-anchor='middle'%3EAMAPÁ%3C/text%3E%3C/svg%3E">
+    <link id="appAppleIcon" rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='100' fill='%2300563B'/%3E%3Ctext x='50%25' y='45%25' font-family='Arial, sans-serif' font-weight='bold' font-size='110' fill='%23ffffff' text-anchor='middle'%3EEMBRAPA%3C/text%3E%3Ctext x='50%25' y='68%25' font-family='Arial, sans-serif' font-weight='500' font-size='50' fill='%2381c784' text-anchor='middle'%3EAMAPÁ%3C/text%3E%3C/svg%3E">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Mandioca.LDT">
+    <meta name="apple-mobile-web-app-title" content="SisGen Embrapa">
     <meta name="theme-color" content="#00563B">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -363,7 +363,7 @@
 
     gerarRegistrosCompletos();
 
-    // Ordenar os dados em estrita sequência cronológica de Ano (do mais antigo para o mais recente)
+    // Ordenação estrita em sequência cronológica de Ano
     data.sort((a, b) => parseInt(a.ano, 10) - parseInt(b.ano, 10));
 
     // Estado da Paginação
@@ -378,7 +378,6 @@
                item.contexto.toLowerCase().includes(query) ||
                item.referencia.toLowerCase().includes(query);
       });
-      // Mantém a ordenação cronológica mesmo após realizar buscas
       filteredData.sort((a, b) => parseInt(a.ano, 10) - parseInt(b.ano, 10));
     }
 
@@ -507,7 +506,7 @@
     }
 
     function onPageSizeChange() {
-      pageSize = document.getElementById('pageSizeSelect').value;
+      pageSize = document.getElementById('pageSizeSelect', 10).value;
       currentPage = 1;
       renderTimeline();
     }
