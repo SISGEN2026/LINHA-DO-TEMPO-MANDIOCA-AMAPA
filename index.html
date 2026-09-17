@@ -283,7 +283,7 @@
   </div>
 
   <script>
-    // Base com os 117 registros da pesquisa com mandioca no Amapá
+    // Base com os registros da pesquisa com mandioca no Amapá
     const data = [
       { ano: "-2031", contexto: "Há mais de 4.000 anos cultivada por civilizações pré-incaicas.", referencia: "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22" },
       { ano: "969", contexto: "Há mais de 1.000 anos cultivada na ilha do Marajó.", referencia: "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22" },
@@ -335,7 +335,7 @@
       { ano: "2018", contexto: "A mandioca de mesa no estado do Amapá: panorama e perspectivas.", referencia: "MARINI, J. A. A mandioca de mesa no estado do Amapá. Colômbia: [S.n.], 2018. 47 p.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+de+mesa+no+estado+do+Amap%C3%A1%22" },
       { ano: "2019", contexto: "Sistema de produção de mandioca da comunidade quilombola de Gurupá, Pará/Amapá.", referencia: "MODESTO JUNIOR, M. de S. et al. Sistema de produção de mandioca da comunidade quilombola de Gurupá, Pará. Belém: Embrapa Amazônia Oriental, 2019. 31 p.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1117520" },
       { ano: "2020", contexto: "Primeiro relato de Chilomima clarkei em mandioca no estado do Amapá.", referencia: "ADAIME, R. et al. First record of Chilomima clarkei in Manihot esculenta Crantz in Amapá state, Brazil. EntomoBrasilis, v. 13, p. 1-4, 2020.", url: "https://www.entomobrasilis.org/index.php/ebras/article/view/e914" },
-      { ano: "2021", contexto: "Ocorrência do ácaro-verde em cultivo de mandioca no município de Macapá, AP.", referencia: "JORDÃO, A. L.; NORONHA, A. C. da S.; OLIVEIRA, C. Ocorrência do ácaro-verde Mononychellus tanajoa em cultivo de mandioca em Macapá, AP. In: CONGRESSO BRASILEIRO DE MANDIOCA, 17., 2021.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Ocorr%C3%AAncia+do+%C3%A1caro-verde%22+Macap%C3%A1" }
+      { ano: "2021", contexto: "Ocorrência do ácaro-verde em cultivo de mandioca no município de Macapá, AP.", referencia: "JORDÃO, A. ಲ.; NORONHA, A. C. da S.; OLIVEIRA, C. Ocorrência do ácaro-verde Mononychellus tanajoa em cultivo de mandioca em Macapá, AP. In: CONGRESSO BRASILEIRO DE MANDIOCA, 17., 2021.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Ocorr%C3%AAncia+do+%C3%A1caro-verde%22+Macap%C3%A1" }
     ];
 
     // Preencher automaticamente até completar os 117 registros históricos
@@ -483,13 +483,13 @@
       paginationContainer.appendChild(nextBtn);
     }
 
-    function createPageButton(pageNumber) {
+    function createPageButton(page) {
       const btn = document.createElement('button');
-      btn.innerText = pageNumber;
-      if (pageNumber === currentPage) {
-        btn.classList.add('active');
+      btn.innerText = page;
+      if (page === currentPage) {
+        btn.className = 'active';
       }
-      btn.onclick = () => goToPage(pageNumber);
+      btn.onclick = () => goToPage(page);
       return btn;
     }
 
@@ -506,15 +506,17 @@
     }
 
     function onPageSizeChange() {
-      pageSize = document.getElementById('pageSizeSelect').value;
+      const val = document.getElementById('pageSizeSelect').value;
+      pageSize = val === 'all' ? 'all' : parseInt(val, 10);
       currentPage = 1;
       renderTimeline();
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
+    // Inicialização ao carregar a página
+    window.onload = () => {
       filterData();
       renderTimeline();
-    });
+    };
   </script>
 </body>
 </html>
