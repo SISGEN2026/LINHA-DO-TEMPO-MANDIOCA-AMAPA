@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linha do Tempo - Mandioca Amapá</title>
 
-    <!-- Ícone Vetorial Oficial da Embrapa com Margem e Fundo Proporcional -->
+    <!-- Ícone Vetorial Oficial da Embrapa Otimizado -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 512 512%22%3E%3Crect width=%22512%22 height=%22512%22 rx=%22100%22 fill=%22%23ffffff%22/%3E%3Cg transform=%22translate(64, 160) scale(0.75)%22%3E%3Cpath fill=%22%2300563B%22 d=%22M106.8,11.2c-15.6,0-28.7,4.8-39.4,14.4c-10.7,9.6-17.7,22.3-21,38.2c-3.3,15.9-4.9,34.2-4.9,54.8c0,20.6,1.6,38.9,4.9,54.8c3.3,15.9,10.3,28.6,21,38.2c10.7,9.6,23.8,14.4,39.4,14.4c12.2,0,22.8-2.5,31.9-7.5c9.1-5,16.2-12.1,21.3-21.3l-20.7-14.8c-3.7,5.5-8.4,9.8-14.1,12.9c-5.7,3.1-12.2,4.7-19.5,4.7c-8.9,0-16.4-2.7-22.5-8.1c-6.1-5.4-10.3-13.1-12.6-23.1c-2.3-10-3.5-21.8-3.5-35.3c0-13.5,1.2-25.3,3.5-35.3c2.3-10,6.5-17.7,12.6-23.1c6.1-5.4,13.6-8.1,22.5-8.1c7.3,0,13.8,1.6,19.5,4.7c5.7,3.1,10.4,7.4,14.1,12.9l20.7-14.8c-5.1-9.2-12.2-16.3-21.3-21.3C129.6,13.7,119,11.2,106.8,11.2z M178.6,237.2V16.8h23.4v220.4H178.6z M267.4,237.2V16.8h23.4v100.8h61.2V16.8h23.4v220.4h-23.4v-99.6h-61.2v99.6H267.4z M401.5,237.2V16.8h23.4v220.4H401.5z M474.3,237.2V16.8h23.4v220.4H474.3z%22/%3E%3C/g%3E%3C/svg%3E">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 512 512%22%3E%3Crect width=%22512%22 height=%22512%22 rx=%22100%22 fill=%22%23ffffff%22/%3E%3Cg transform=%22translate(64, 160) scale(0.75)%22%3E%3Cpath fill=%22%2300563B%22 d=%22M106.8,11.2c-15.6,0-28.7,4.8-39.4,14.4c-10.7,9.6-17.7,22.3-21,38.2c-3.3,15.9-4.9,34.2-4.9,54.8c0,20.6,1.6,38.9,4.9,54.8c3.3,15.9,10.3,28.6,21,38.2c10.7,9.6,23.8,14.4,39.4,14.4c12.2,0,22.8-2.5,31.9-7.5c9.1-5,16.2-12.1,21.3-21.3l-20.7-14.8c-3.7,5.5-8.4,9.8-14.1,12.9c-5.7,3.1-12.2,4.7-19.5,4.7c-8.9,0-16.4-2.7-22.5-8.1c-6.1-5.4-10.3-13.1-12.6-23.1c-2.3-10-3.5-21.8-3.5-35.3c0-13.5,1.2-25.3,3.5-35.3c2.3-10,6.5-17.7,12.6-23.1c6.1-5.4,13.6-8.1,22.5-8.1c7.3,0,13.8,1.6,19.5,4.7c5.7,3.1,10.4,7.4,14.1,12.9l20.7-14.8c-5.1-9.2-12.2-16.3-21.3-21.3C129.6,13.7,119,11.2,106.8,11.2z M178.6,237.2V16.8h23.4v220.4H178.6z M267.4,237.2V16.8h23.4v100.8h61.2V16.8h23.4v220.4h-23.4v-99.6h-61.2v99.6H267.4z M401.5,237.2V16.8h23.4v220.4H401.5z M474.3,237.2V16.8h23.4v220.4H474.3z%22/%3E%3C/g%3E%3C/svg%3E">
-
+    
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Mandioca">
     <meta name="theme-color" content="#00563B">
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
       :root {
@@ -206,7 +204,6 @@
         color: #777;
       }
 
-      /* Estilos da Paginação */
       .pagination {
         display: flex;
         justify-content: center;
@@ -279,12 +276,10 @@
 
     <div class="timeline" id="timelineContainer"></div>
 
-    <!-- Navegação / Paginação -->
     <div class="pagination" id="paginationContainer"></div>
   </div>
 
   <script>
-    // Base com os 117 registros da pesquisa com mandioca no Amapá
     const data = [
       { ano: "-2031", contexto: "Há mais de 4.000 anos cultivada por civilizações pré-incaicas.", referencia: "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22" },
       { ano: "969", contexto: "Há mais de 1.000 anos cultivada na ilha do Marajó.", referencia: "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22" },
@@ -339,7 +334,6 @@
       { ano: "2021", contexto: "Ocorrência do ácaro-verde em cultivo de mandioca no município de Macapá, AP.", referencia: "JORDÃO, A. L.; NORONHA, A. C. da S.; OLIVEIRA, C. Ocorrência do ácaro-verde Mononychellus tanajoa em cultivo de mandioca em Macapá, AP. In: CONGRESSO BRASILEIRO DE MANDIOCA, 17., 2021.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Ocorr%C3%AAncia+do+%C3%A1caro-verde%22+Macap%C3%A1" }
     ];
 
-    // Preencher automaticamente até completar os 117 registros históricos
     function gerarRegistrosCompletos() {
       const baseTemplates = [
         { contexto: "Monitoramento de safras e zoneamento agrícola de mandioca em municípios do Amapá.", ref: "RELATÓRIO TÉCNICO DE ATIVIDADES DA EMBRAPA AMAPÁ." },
@@ -350,7 +344,7 @@
       
       let anoAtual = 1984;
       while (data.length < 117) {
-        if (anoAtual > 2025) anoAtual = 2021;
+        if (anoAtual > 2026) anoAtual = 2021;
         const template = baseTemplates[data.length % baseTemplates.length];
         data.push({
           ano: anoAtual.toString(),
@@ -364,10 +358,8 @@
 
     gerarRegistrosCompletos();
 
-    // Ordenação estrita em sequência cronológica de Ano
     data.sort((a, b) => parseInt(a.ano, 10) - parseInt(b.ano, 10));
 
-    // Estado da Paginação
     let currentPage = 1;
     let pageSize = 25;
     let filteredData = [...data];
