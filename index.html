@@ -419,123 +419,839 @@
 
     // Base permanente completa com os 117 registros históricos
     const dadosIniciais = [
-      { id: 1, ano: "-2031", contexto: "Há mais de 4.000 anos cultivada por civilizações pré-incaicas.", referencia: "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22" },
-      { id: 2, ano: "969", contexto: "Há mais de 1.000 anos cultivada na ilha do Marajó.", referencia: "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22" },
-      { id: 3, ano: "1946", contexto: "Início da introdução de materiais procedentes da região Norte e do Nordeste no IAN (Instituto Agronômico do Norte).", referencia: "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22" },
-      { id: 4, ano: "1962", contexto: "Estudos com mandioca, envolvendo 66 cultivares: Mameluca, Soi, Jurará, Pecuí, Pretinha, Pai Lourenço, Tapioqueira, Amarela, entre outras.", referencia: "DA PONTE, N. T.; ALBUQUERQUE, M. de .; ANDRADE, S.; LIBONATI, V. F. Estudos com mandioca. Belém: IAN, 1962 (Circular, 6).", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/375629" },
-      { id: 5, ano: "1965", contexto: "Produção e área cultivada de mandioca no Amapá, segundo o IBGE: 2.120 ha; 22 t.", referencia: "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22" },
-      { id: 6, ano: "1966", contexto: "IRDA (Instituto Regional de Desenvolvimento do Amapá) em convênio com o IAN recebeu 80 cultivares de mandioca, com os quais iniciou a instalação de ensaios experimentais.", referencia: "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22" },
-      { id: 7, ano: "1969", contexto: "Cultivares de mandioca oriundas do Amapá estudadas pelo IAN: Macaxé, Cauauá e Wick (Oiapoque); Tucunaré e Niplê (Oiapoque e Macapá).", referencia: "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22" },
-      { id: 8, ano: "1972", contexto: "Resultados de trabalhos experimentais no território federal do Amapá no período de 1972 a 1974.", referencia: "OLIVEIRA, R. F. de; MORRIL, G. de S. Resultados de trabalhos experimentais no território federal do Amapá no período de 1972 a 1974. Belém, PA: EMBRAPA, 1975.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Resultados+de+trabalhos+experimentais+no+territ%C3%B3rio+federal+do+Amap%C3%A1%22" },
-      { id: 9, ano: "1975", contexto: "Sistemas de produção para mandioca: mandioca + arroz, mandioca + milho no Amapá.", referencia: "SISTEMAS de produção para mandioca: mandioca + arroz; mandioca + milho; Região Norte. Macapá, AP: EMBRAPA/ACAR-AP, 1975.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Sistemas+de+produ%C3%A7%C3%A3o+para+mandioca%22" },
-      { id: 10, ano: "1979", contexto: "Ensaio de espaçamento de mandioca na Colônia Agrícola do Matapi p/ Embrapa: 10 t/ha, 1,0 m x 0,8 m.", referencia: "RELATÓRIO TÉCNICO ANUAL DO NÚCLEO DE PESQUISA AGROPECUÁRIA DO AMAPÁ: 1980. Belém, PA: CPATU, 1981.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22RELAT%C3%93RIO+T%C3%89CNICO+ANUAL+DO+N%C3%9ACLEO+DE+PESQUISA+AGROPECU%C3%81RIA+DO+AMAP%C3%81%22" },
-      { id: 11, ano: "1980", contexto: "Sistemas de produção: mandioca + arroz, mandioca + milho, milho-feijão + mandioca, arroz-feijão + mandioca.", referencia: "SISTEMAS de produção: mandioca + arroz, mandioca + milho, milho-feijão + mandioca, arroz-feijão + mandioca. Belém, PA: EMBRAPA-CPATU; Macapá: ASTER-AP, 1980.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22SISTEMAS+de+produ%C3%A7%C3%A3o%3A+mandioca%22" },
-      { id: 12, ano: "1980", contexto: "Ensaio de espaçamento de mandioca na Colônia Agrícola do Matapi p/ Embrapa: 10 t/ha, 1,0 m x 0,8 m.", referencia: "RELATÓRIO TÉCNICO ANUAL DO NÚCLEO DE PESQUISA AGROPECUÁRIA DO AMAPÁ: 1980. Belém, PA: CPATU, 1981.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22RELAT%C3%93RIO+T%C3%89CNICO+ANUAL+DO+N%C3%9ACLEO+DE+PESQUISA+AGROPECU%C3%81RIA+DO+AMAP%C3%81%22" },
-      { id: 13, ano: "1980", contexto: "Sistema de Produção na Colônia Agrícola do Matapi p/ avaliar efeito de fertilizantes envolvendo mandioca, milho, arroz e caupi. Produtividade mandioca no melhor tratamento: 16,2 t/ha.", referencia: "RELATÓRIO TÉCNICO ANUAL DO NÚCLEO DE PESQUISA AGROPECUÁRIA DO AMAPÁ: 1980. Belém, PA: CPATU, 1981.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22RELAT%C3%93RIO+T%C3%89CNICO+ANUAL+DO+N%C3%9ACLEO+DE+PESQUISA+AGROPECU%C3%81RIA+DO+AMAP%C3%81%22" },
-      { id: 14, ano: "1980", contexto: "Cultura mais plantada no Amapá, com área de 2.432 ha e produção de 24.320 t, com as cultivares Marapanim e Farias de produtividade média de 10 t/ha.", referencia: "RELATÓRIO TÉCNICO ANUAL DO NÚCLEO DE PESQUISA AGROPECUÁRIA DO AMAPÁ: 1980. Belém, PA: CPATU, 1981.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22RELAT%C3%93RIO+T%C3%89CNICO+ANUAL+DO+N%C3%9ACLEO+DE+PESQUISA+AGROPECU%C3%81RIA+DO+AMAP%C3%81%22" },
-      { id: 15, ano: "1981", contexto: "Notícia sobre cultura da mandioca no território do Amapá.", referencia: "AMARAL, M. A. L. dos; AMARAL, J. B. do. Notícia sobre cultura da mandioca no território do Amapá. Macapá: ASTER - AMAPÁ, 1981.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Not%C3%ADcia+sobre+cultura+da+mandioca+no+territ%C3%B3rio+do+Amap%C3%A1%22" },
-      { id: 16, ano: "1982", contexto: "Sistema de Produção no Campo Exp. de Mazagão p/ avaliar espaçamento e épocas de colheita de mandioca (Pretinha e Mameluca).", referencia: "RELATÓRIO TÉCNICO ANUAL DO NÚCLEO DA UNIDADE DE EXECUÇÃO DE PESQUISA DE ÂMBITO TERRITORIAL DE MACAPÁ: 1982. Macapá: Uepat, 1984.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22RELAT%C3%93RIO+T%C3%89CNICO+ANUAL+DO+N%C3%9ACLEO+DA+UNIDADE+DE+EXECU%C3%87%C3%83O+DE+PESQUISA%22" },
-      { id: 17, ano: "1982", contexto: "Sistema de Produção no Campo Exp. de Mazagão p/ avaliar consórcio c/ adubação em culturas alimentares (mandioca, arroz, milho e caupi): Pretinha 26 t/ha.", referencia: "RELATÓRIO TÉCNICO ANUAL DO NÚCLEO DA UNIDADE DE EXECUÇÃO DE PESQUISA DE ÂMBITO TERRITORIAL DE MACAPÁ: 1982. Macapá: Uepat, 1984.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22RELAT%C3%93RIO+T%C3%89CNICO+ANUAL+DO+N%C3%9ACLEO+DA+UNIDADE+DE+EXECU%C3%87%C3%83O+DE+PESQUISA%22" },
-      { id: 18, ano: "1982", contexto: "Sistema de produção de mandioca.", referencia: "CAVALCANTE, E. da S.; PEREIRA, L. A. F.; SANTOS FILHO, E. M. dos; FIGUEIREDO, F. J. C. Sistema de produção de mandioca. Macapá: EMBRAPA-UEPAT de Macapá, 1982.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Sistema+de+produ%C3%A7%C3%A3o+de+mandioca%22+CAVALCANTE" },
-      { id: 19, ano: "1983", contexto: "Introdução de 133 cultivares de mandioca no Campo Exp. de Mazagão p/ avaliar produção, rendimento e doenças.", referencia: "RELATÓRIO TÉCNICO ANUAL DO NÚCLEO DA UNIDADE DE EXECUÇÃO DE PESQUISA DE ÂMBITO TERRITORIAL DE MACAPÁ: 1983-1984. Macapá: Uepat, 1985.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22RELAT%C3%93RIO+T%C3%89CNICO+ANUAL+DO+N%C3%9ACLEO+DA+UNIDADE+DE+EXECU%C3%87%C3%83O+DE+PESQUISA%22" },
-      { id: 20, ano: "1988", contexto: "Adaptação de cultivares de mandioca em ecossistemas do Amapá (112 germoplasmas): áreas de terra firme e de várzea em Mazagão; e de Cerrado.", referencia: "PEQUENO, M.R. Adaptação de cultivares de mandioca em ecossistemas do Amapá. Macapá: Embrapa, 1988.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/item/119" },
-      { id: 21, ano: "1989", contexto: "Aspectos da agropecuaria Amapaense.", referencia: "IBGE. Aspectos da agropecuaria Amapaense. Amapa, 1989. 36p.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Aspectos+da+agropecuaria+Amapaense%22" },
-      { id: 22, ano: "1989", contexto: "Seleção de mandioca em mata de terra firme no Amapá.", referencia: "PEQUENO, M. R. Seleção de mandioca em mata de terra firme no Amapá. Macapá: EMBRAPA-UEPAE de Macapá, 1989.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Sele%C3%A7%C3%A3o+de+mandioca+em+mata+de+terra+firme+no+Amap%C3%A1%22" },
-      { id: 23, ano: "1990", contexto: "Receitas de mandioca.", referencia: "ASTER-AMAPA/COPER (Macapa, Amapa). Receitas de mandioca. Macapá, AP: COPER, 1990. 26p.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Receitas+de+mandioca%22+ASTER" },
-      { id: 24, ano: "1991", contexto: "Adoção de inovações, relações de trabalho e cultura na unidade de produção camponesa - o caso de curiaú no Amapá.", referencia: "MORAES, J. M. da S. Adoção de inovações, relações de trabalho e cultura na unidade de produção camponesa - o caso de curiau no Amapá. Lavras: ESAL, 1991.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Ado%C3%A7%C3%A3o+de+inova%C3%A7%C3%B5es%2C+rela%C3%A7%C3%B5es+de+trabalho%22" },
-      { id: 25, ano: "1992", contexto: "Diagnóstico da agropecuária amapaense.", referencia: "ALVES, R. N. B.; ALVES, R. M. M.; MOCHIUTTI, S. Diagnóstico da agropecuária amapaense. Macapá: EMBRAPA-CPAF-Amapá, 1992.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Diagn%C3%B3stico+da+agropecu%C3%A1ria+amapaense%22" },
-      { id: 26, ano: "1995", contexto: "Recomendação da cultivar de mandioca para mata de terra firme no Amapá: cultivar Jurará.", referencia: "BEZERRA, V. S. Jurará: cultivar de mandioca (Manihot esculenta Crantz) recomendada para mata de terra firme no Amapá. Macapá: Embrapa, 1996.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341864" },
-      { id: 27, ano: "1995", contexto: "Avaliação de resistência à podridão radicular em mandioca no Amapá.", referencia: "BEZERRA, V. S.; FUKUDA, C. Avaliação de resistência à podridão radicular em mandioca no Estado do Amapá. In: CONGRESSO BRASILEIRO DE FITOPATOLOGIA, 28., 1995.", url: "https://sistemasdeproducao.cnptia.embrapa.br/FontesHTML/Mandioca/mandioca_amapa/referencias.htm" },
-      { id: 28, ano: "1995", contexto: "Novas alternativas para produção de mandioca nas várzeas amapaenses.", referencia: "Embrapa-CPAFA/AP. NOVAS alternativas para produção de mandioca nas várzeas amapaenses. Macapá: Embrapa-CPAF/AP, 1995. 1 folder", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22NOVAS+alternativas+para+produ%C3%A7%C3%A3o+de+mandioca%22" },
-      { id: 29, ano: "1996", contexto: "Jurará: cultivar de mandioca (Manihot esculenta Crantz) para o ecossistema mata de terra firme no Estado do Amapá, Brasil.", referencia: "BEZERRA, V. S. Jurará: cultivar de mandioca... In: CONGRESSO LATINO AMERICANO DE RAÍZES TROPICAIS, 1., 1996.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Jurara%3A+cultivar+de+mandioca%22" },
-      { id: 30, ano: "1996", contexto: "Jurará: cultivar recomendada para mata de terra firme no Amapá, 31 t/ha.", referencia: "BEZERRA, V. S. Jurará: cultivar de mandioca recomendada para mata de terra firme no Amapá. Macapá: Embrapa, 1996.", url: "https://www.embrapa.br/busca-de-publicacoes/-/publicacao/349884/jurara-cultivar-de-mandioca-manihot-esculenta-crantz-para-o-ecossistema-mata-de-terra-firme-no-estado-do-amapa-brasil" },
-      { id: 31, ano: "1996", contexto: "Sistemas de plantio de culturas anuais nas várzeas do Amapá.", referencia: "CAVALCANTE, E. da S. Sistemas de plantio de culturas anuais nas várzeas do Amapá. Macapá: EMBRAPA-CPAF-Amapá, 1996.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Sistemas+de+plantio+de+culturas+anuais+nas+v%C3%A1rzeas+do+Amap%C3%A1%22" },
-      { id: 32, ano: "1996", contexto: "Como selecionar e conservar maniva semente de mandioca.", referencia: "BEZERRA, V. S. Como selecionar e conservar maniva-semente de mandioca. Macapá: Embrapa-CPAF-Amapá, 1996.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Como+selecionar+e+conservar+maniva-semente+de+mandioca%22" },
-      { id: 33, ano: "1996", contexto: "Maniva semente: seleção, conservação e utilização.", referencia: "MANIVA-semente: seleção, conservação e utilização. Macapá: Embrapa Amapá, 1996. 1 Folder.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Maniva-semente%3A+sele%C3%A7%C3%A3o%2C+conserva%C3%A7%C3%A3o+e+utiliza%C3%A7%C3%A3o%22" },
-      { id: 34, ano: "1996", contexto: "Curso sobre a cultura da mandioca.", referencia: "CURSO SOBRE A CULTURA DA MANDIOCA, 1996, Macapá. Apostila. Macapá: Embrapa-CPAF-Amapá, 1996.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22CURSO+SOBRE+A+CULTURA+DA+MANDIOCA%22" },
-      { id: 35, ano: "1996", contexto: "Fabricação de farinha de mandioca: processo mecanizado.", referencia: "INSTITUTO DE DESENVOLVIMENTO RURAL DO AMAPA. Fabricação de farinha de mandioca: processo mecanizado. Macapa, 1996.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Fabrica%C3%A7%C3%A3o+de+farinha+de+mandioca%3A+processo+mecanizado%22" },
-      { id: 36, ano: "1997", contexto: "Coleta, caracterização botânica e avaliação agronômica de germoplasma de mandioca obtido em área indígena do Oiapoque.", referencia: "BEZERRA, V. S. Coleta, caracterização botânica e avaliação agronômica de germoplasma... RBM, 1997.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Coleta%2C+caracteriza%C3%A7%C3%A3o+bot%C3%A2nica+e+avalia%C3%A7%C3%A3o+agron%C3%B4mica%22" },
-      { id: 37, ano: "1997", contexto: "Seleção de genótipos de mandioca no cerrado do Amapá.", referencia: "BEZERRA, V. S. Seleção de genótipos de mandioca no cerrado amapaense. Macapá: Embrapa, 1997.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Sele%C3%A7%C3%A3o+de+gen%C3%B3tipos+de+mandioca+no+cerrado+amapaense%22" },
-      { id: 38, ano: "1997", contexto: "Mãe Joana e Amazonas Embrapa 8: cultivares de mandioca recomendadas para várzeas amapaenses.", referencia: "BEZERRA, V. S. Mãe Joana e Amazonas Embrapa 8: cultivares de mandioca para várzeas amapaenses. Macapá: Embrapa-CPAF-Amapá, 1997.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22M%C3%A3e+Joana+e+Amazonas+Embrapa+8%22" },
-      { id: 39, ano: "1997", contexto: "Divergência genética multivariada entre genótipos de mandioca coletados em área indígena do Amapá.", referencia: "FARIAS NETO, J. T. de; BEZERRA, V. S. Divergência genética multivariada... Revista Brasileira de Genética, 1997.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Diverg%C3%AAncia+gen%C3%A9tica+multivariada+entre+gen%C3%B3tipos+de+mandioca%22" },
-      { id: 40, ano: "1999", contexto: "Composição centesimal de misturas à base de fécula de mandioca para confeccção de pão de queijo.", referencia: "BEZERRA, V. S. Composição centesimal de misturas à base de fécula de mandioca... CONGRESSO BRASILEIRO DE MANDIOCA, 10., 1999.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Composi%C3%A7%C3%A3o+centesimal+de+misturas+%C3%A0+base+de+f%C3%A9cula%22" },
-      { id: 41, ano: "1999", contexto: "Avaliação da qualidade do polvilho durante a fermentação industrial da fécula de mandioca.", referencia: "PEREIRA, R. G. F. A.; VILELA, E. R.; BEZERRA, V. S. Avaliação da qualidade do polvilho... CONGRESSO BRASILEIRO DE MANDIOCA, 10., 1999.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Avalia%C3%A7%C3%A3o+da+qualidade+do+polvilho+durante+a+fermenta%C3%A7%C3%A3o%22" },
-      { id: 42, ano: "1999", contexto: "Qualidade do polvilho durante a fermentação da fécula de mandioca, com e sem adição de inóculos.", referencia: "PEREIRA, R. G. F. A.; VILELA, E. R.; BEZERRA, V. S. Qualidade do polvilho... CONGRESSO BRASILEIRO DE MANDIOCA, 10., 1999.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Qualidade+do+polvilho+durante+a+fermenta%C3%A7%C3%A3o+da+f%C3%A9cula+de+mandioca%22" },
-      { id: 43, ano: "1999", contexto: "Catálogo de germoplasma de mandioca coletado no estado do Amapá.", referencia: "CARDOSO, E. M. R.; MÜLLER, N. R. M. Catálogo de germoplasma de mandioca coletado no estado do Amapá. Belém: Embrapa Amazônia Oriental, 1999.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341864" },
-      { id: 44, ano: "2000", contexto: "Alterações na composição química e cocção de raízes de mandioca minimamente processadas.", referencia: "BEZERRA, V. S. Alterações na composição química e cocção de raízes de mandioca... Dissertação - UFLA, 2000.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Altera%C3%A7%C3%B5es+na+composi%C3%A7%C3%A3o+qu%C3%ADmica+e+coc%C3%A7%C3%A3o+de+ra%C3%A3zes%22" },
-      { id: 45, ano: "2000", contexto: "Alterações na composição química e cocção de raízes de mandioca após armazenamento sob condições de refrigeração e branqueamento.", referencia: "BEZERRA, V. S.; PEREIRA, R. G. F. A. Alterações na composição química... CONGRESSO BRASILEIRO DE CIÊNCIA E TECNOLOGIA DE ALIMENTOS, 17., 2000.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Altera%C3%A7%C3%B5es+na+composi%C3%A7%C3%A3o+qu%C3%ADmica+e+coc%C3%A7%C3%A3o+de+ra%C3%ADzes+de+mandioca+ap%C3%B3s+armazenamento%22" },
-      { id: 46, ano: "2001", contexto: "Rendimento de farinha da cultivar Jurará no Amapá, em 32,7%.", referencia: "BEZERRA, V. S.; SOUZA, W. P. de . Rendimento de farinha da cultivar de mandioca Jurará no estado do Amapá. Macapá: Embrapa Amapá, 2001.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341865" },
-      { id: 47, ano: "2001", contexto: "Características botânico-agronômicas de cultivares de mandioca em cerrado do Amapá.", referencia: "BEZERRA, V. S. Características botânico-agronômicas de cultivares de mandioca em cerrado amapaense. Macapá: Embrapa Amapá, 2001.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341870" },
-      { id: 48, ano: "2001", contexto: "Recomendação plantio da cultivar Jurará em fileira dupla com caupi no Amapá.", referencia: "BEZERRA, V. S.; SOUZA, W. P. de . Recomendações ao plantio da mandioca Jurará em fileira dupla com feijão caupi no estado do Amapá. Macapá: Embrapa Amapá, 2001.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341880" },
-      { id: 49, ano: "2001", contexto: "Qualidade e conservação de raízes de mandioca minimamente processadas, branqueadas e embaladas à vácuo sob refrigeração.", referencia: "BEZERRA, V. S. et al. Qualidade e conservação de raízes de mandioca... SIMPÓSIO LATINO AMERICANO DE CIÊNCIA DE ALIMENTOS, 4., 2001.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Qualidade+e+conserva%C3%A7%C3%A3o+de+ra%C3%ADzes+de+mandioca+minimamente+processadas%22" },
-      { id: 50, ano: "2001", contexto: "Raízes de mandioca minimamente processadas: efeito do branqueamento na qualidade e na conservação sob refrigeração.", referencia: "BEZERRA, V. S. et al. Raízes de mandioca minimamente processadas... SIMPÓSIO LATINO AMERICANO DE CIÊNCIA DE ALIMENTOS, 4., 2001.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Ra%C3%ADzes+de+mandioca+minimamente+processadas%3A+efeito+do+branqueamento%22" },
-      { id: 51, ano: "2001", contexto: "Laboratório de qualidade da farinha de mandioca da Embrapa Amapá.", referencia: "LABORATÓRIO de qualidade da farinha de mandioca da Embrapa Amapá. Macapá: Embrapa Amapá, 2001. 1 Folder.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Laborat%C3%B3rio+de+qualidade+da+farinha+de+mandioca+da+Embrapa+Amap%C3%A1%22" },
-      { id: 52, ano: "2001", contexto: "Qualidade da farinha de mandioca: materiais desclassificantes e impurezas.", referencia: "QUALIDADE da farinha de mandioca: materiais desclassificantes e impurezas. Macapá: Embrapa Amapá, 2001. 1 Folder.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Qualidade+da+farinha+de+mandioca%3A+materiais+desclassificantes%22" },
-      { id: 53, ano: "2001", contexto: "Poder poluente da água residual na fabricação de farinha de mandioca no Amapá.", referencia: "BEZERRA, V. S. Poder poluente da água residual na fabricação de farinha de mandioca no Estado do Amapá. Macapá: Embrapa Amapá, 2001.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341901" },
-      { id: 54, ano: "2001", contexto: "Poder poluente da manipueira na fabricação de farinha de mandioca no Amapá.", referencia: "BEZERRA, V. S. Poder poluente da água residual ou manipuera na fabricação de farinha de mandioca. Porto Livre, Santana, 2001.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Poder+poluente+da+%C3%A1gua+residual+ou+manipuera%22" },
-      { id: 55, ano: "2002", contexto: "Caracterização morfológica de cultivares de mandioca no Amapá.", referencia: "BEZERRA, V. S. Caracterização morfológica de cultivares de mandioca do estado do Amapá. Macapá: Embrapa Amapá, 2002.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/903651" },
-      { id: 56, ano: "2002", contexto: "Teste de cultivares de mandioca no Amapá.", referencia: "CAVALCANTE, E. da S. Teste de cultivares de mandioca no Amapá. Macapá: Embrapa Amapá, 2002.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/903652" },
-      { id: 57, ano: "2002", contexto: "Isoenzymatic variability of cassava accessions from different regions in Brazil.", referencia: "CABRAL, B. L. R. et al. Isoenzymatic variability of cassava accessions from different regions in Brazil. Scientia Agricola, 2002.", url: "https://www.scielo.br/j/sa/" },
-      { id: 58, ano: "2002", contexto: "Cultivares de mandioca recomendadas para o Brasil.", referencia: "FUKUDA, W. M. G. et al. Cultivares de mandioca recomendadas para o Brasil - 2002. Cruz das Almas: Embrapa Mandioca e Fruticultura, 2002.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/937211" },
-      { id: 59, ano: "2002", contexto: "Estrutura de renda dos produtores da Reserva Extrativista do Rio Cajari, Amapá.", referencia: "KOURI, J. et al. Estrutura de renda dos produtores da Reserva Extrativista do Rio Cajari, Amapá. Macapá: Embrapa Amapá, 2002.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Estrutura+de+renda+dos+produtores+da+Reserva+Extrativista+do+Rio+Cajari%22" },
-      { id: 60, ano: "2002", contexto: "Valor nutricional da mandioca e transformações pós-colheita.", referencia: "BEZERRA, V. S. Valor nutricional da mandioca (Manihot esculenta Crantz) e transformações pós-colheita. Macapá: Embrapa Amapá, 2002.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/975102" },
-      { id: 61, ano: "2002", contexto: "Processamento mínimo em mandioca: alterações na qualidade e componentes nutricionais.", referencia: "BEZERRA, V. S. et al. Processamento mínimo em mandioca: alterações na qualidade... CBCTA, 18., 2002.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Processamento+m%C3%ADnimo+em+mandioca%3A+altera%C3%A7%C3%B5es+na+qualidade%22" },
-      { id: 62, ano: "2002", contexto: "Raízes de mandioca minimamente processadas: efeito do branqueamento na qualidade e na conservação.", referencia: "BEZERRA, V. S. et al. Raízes de mandioca minimamente processadas... Ciência e Agrotecnologia, 2002.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Ra%C3%ADzes+de+mandioca+minimamente+processadas%3A+efeito+do+branqueamento+na+qualidade%22" },
-      { id: 63, ano: "2003", contexto: "Do campo à mesa: a fécula de mandioca como componente do pão 'brasileirinho'.", referencia: "BEZERRA, V. S. Do campo à mesa: a fécula de mandioca como componente do pão 'brasileirinho'. Leia, Macapá, 2003.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Do+campo+%C3%A0+mesa%3A+a+f%C3%A9cula+de+mandioca+como+componente%22" },
-      { id: 64, ano: "2003", contexto: "Características de cultivares locais de mandioca no Amapá.", referencia: "CAVALCANTE, E. da S. Características de cultivares locais de mandioca no Amapá. Macapá: Embrapa Amapá, 2003.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1004122" },
-      { id: 65, ano: "2003", contexto: "Características de destaque em cultivares de mandioca para consumo 'in natura' no Amapá.", referencia: "CAVALCANTE, E. da S. Características de destaque em cultivares de mandioca para consumo 'in natura' no Amapá. Macapá: Embrapa Amapá, 2003.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1032111" },
-      { id: 66, ano: "2003", contexto: "Cultivo de mandioca para o estado do Amapá. Recomenda: Jurará, Mãe Joana e Amazonas Embrapa 8.", referencia: "MATTOS, P. L. P. de; BEZERRA, V. S. Cultivo de mandioca para o estado do Amapá. Cruz das Almas: Embrapa Mandioca e Fruticultura, 2003.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1054322" },
-      { id: 67, ano: "2003", contexto: "Aspectos fitotécnicos da cultura da mandioca.", referencia: "SOUSA, W. P. de; BEZERRA, V. S. Aspectos fitotécnicos da cultura da mandioca. Macapá: Embrapa Amapá, 2003.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Aspectos+fitot%C3%A9cnicos+da+cultura+da+mandioca%22" },
-      { id: 68, ano: "2003", contexto: "Controle de pragas e normas de manuseio de defensivos químicos para a cultura da mandioca.", referencia: "SOUSA, W. P. de; BEZERRA, V. S. Controle de pragas e normas de manuseio de defensivos químicos... Macapá: Embrapa Amapá, 2003.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Controle+de+pragas+e+normas+de+manuseio+de+defensivos+qu%C3%ADmicos%22" },
-      { id: 69, ano: "2003", contexto: "Recomendações de manejo de plantas daninhas e controle de podridão radicular para a cultura da mandioca.", referencia: "SOUSA, W. P. de; BEZERRA, V. S. Recomendações de manejo de plantas daninhas... Macapá: Embrapa Amapá, 2003.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Recomenda%C3%B5es+de+manejo+de+plantas+daninhas+e+controle+de+podrid%C3%A3o+radicular%22" },
-      { id: 70, ano: "2003", contexto: "Técnicas para formação de uma lavoura de mandioca para o Estado do Amapá.", referencia: "SOUSA, W. P. de; BEZERRA, V. S. Técnicas para formação de uma lavoura de mandioca... Macapá: Embrapa Amapá, 2003.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22T%C3%A9cnicas+para+forma%C3%A7%C3%A3o+de+uma+lavoura+de+mandioca%22" },
-      { id: 71, ano: "2003", contexto: "Diagnóstico da cadeia produtiva da mandioca no Amapá.", referencia: "SOUSA, W. P. de; KOURI, J. Diagnóstico da cadeia produtiva da mandioca no Amapá. Macapá: Embrapa Amapá, 2003.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1078210" },
-      { id: 72, ano: "2003", contexto: "Sistema de produção da mandioca no Amapá.", referencia: "SOUZA, W. P. de ; BEZERRA, V. S. Sistema de produção da mandioca para o estado do Amapá. Macapá: Embrapa Amapá, 2003.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1117520" },
-      { id: 73, ano: "2004", contexto: "Composição físico-química de variedades de mandioca no Amapá.", referencia: "BEZERRA, V. S. Composição físico-química de variedades de mandioca no Estado do Amapá. CBCTA, 19., 2004.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Composi%C3%A7%C3%A3o+f%C3%ADsico-qu%C3%ADmica+de+variedades+de+mandioca+no+Estado+do+Amap%C3%A1%22" },
-      { id: 74, ano: "2005", contexto: "Comportamento de cultivares de mandioca à podridão radicular no Amapá.", referencia: "BEZERRA, V. S. Comportamento de cultivares de mandioca à podridão radicular no Estado do Amapá. XI CONGRESSO BRASILEIRO DE MANDIOCA, 2005.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Comportamento+de+cultivares+de+mandioca+%C3%A0+podrid%C3%A3o+radicular%22" },
-      { id: 75, ano: "2005", contexto: "Composição físico-química de macaxeiras no Amapá.", referencia: "BEZERRA, V. S. Composição físico-química de macaxeiras no Estado do Amapá. SIMPÓSIO LATINO AMERICANO DE CIÊNCIA E TECNOLOGIA DE ALIMENTOS, 6., 2005.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Composi%C3%A7%C3%A3o+f%C3%ADsico-qu%C3%ADmica+de+macaxeiras+no+Estado+do+Amap%C3%A1%22" },
-      { id: 76, ano: "2005", contexto: "Desempenho de cultivares de mandioca em áreas infectadas com podridão radicular no Amapá.", referencia: "BEZERRA, V. S. Desempenho de cultivares de mandioca em áreas infectadas com podridão radicular... Macapá: Embrapa Amapá, 2005.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341865" },
-      { id: 77, ano: "2005", contexto: "Processamento mínimo de macaxeira.", referencia: "BEZERRA, V. S. Processamento mínimo de macaxeira. Macapá: Embrapa Amapá, 2005. 1 Folder.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Processamento+m%C3%ADnimo+de+macaxeira%22" },
-      { id: 78, ano: "2005", contexto: "Valor nutricional de misturas comerciais à base de fécula de mandioca.", referencia: "BEZERRA, V. S. Valor nutricional de misturas comerciais à base de fécula de mandioca. Revista Brasileira de Mandioca, 2005.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Valor+nutricional+de+misturas+comerciais+%C3%A0+base+de+f%C3%A9cula+de+mandioca%22" },
-      { id: 79, ano: "2005", contexto: "Utilização da mandioca na alimentação animal.", referencia: "COSTA, N. de L. et al. Utilização da mandioca na alimentação animal. Macapá: Embrapa Amapá, 2005.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341901" },
-      { id: 80, ano: "2005", contexto: "Processamento da mandioca.", referencia: "PROCESSAMENTO da mandioca - programa 10. Programa prosa rural. Brasília, DF: Embrapa Informação Tecnológica, 2005.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Processamento+da+mandioca+-+programa+10%22" },
-      { id: 81, ano: "2006", contexto: "Farinhas de mandioca seca e mista.", referencia: "BEZERRA, V. S. Farinhas de mandioca seca e mista. Brasília, DF: Embrapa Informação Tecnológica; Macapá: Embrapa Amapá, 2006.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341870" },
-      { id: 82, ano: "2006", contexto: "Guia de pragas agrícolas para o manejo integrado no Amapá.", referencia: "JORDÃO, A. L.; SILVA, R. A. da. Guia de pragas agrícolas: para o manejo integrado no Estado do Amapá. Holos Editora, 2006.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Guia+de+pragas+agr%C3%ADcolas%3A+para+o+manejo+integrado%22" },
-      { id: 83, ano: "2008", contexto: "Qualidade e certificação da farinha de mandioca.", referencia: "QUALIDADE e certificação da farinha de mandioca. Dia de Campo na TV. Brasília, DF: Embrapa, 2008.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/864319" },
-      { id: 84, ano: "2010", contexto: "Avaliação sensorial de variedades de mandioca de mesa com raízes de cores diversas.", referencia: "BEZERRA, V. S. et al. Avaliação sensorial de variedades de mandioca de mesa com raízes de cores diversas. 2010.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Avalia%C3%A7%C3%A3o+sensorial+de+variedades+de+mandioca+de+mesa+com+ra%C3%ADzes+de+cores+diversas%22" },
-      { id: 85, ano: "2010", contexto: "Desempenho da agricultura familiar na segurança do abastecimento agroalimentar do Amapá.", referencia: "GONÇALVES, M. C. A. Desempenho da agricultura familiar na segurança do abastecimento... Dissertação - UNIFAP, 2010.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Desempenho+da+agricultura+familiar+na+seguran%C3%A7a+do+abastecimento+agroalimentar+do+Amap%C3%A1%22" },
-      { id: 86, ano: "2011", contexto: "Desempenho produtivo de macaxeiras ou mandiocas de mesa no Amapá.", referencia: "BEZERRA, V. S. Desempenho produtivo de macaxeiras ou mandiocas de mesa no estado do Amapá. 2° CONGRESSO AMAPAENSE DE INICIAÇÃO CIENTÍFICA, 2011.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/903651" },
-      { id: 87, ano: "2011", contexto: "Planejando uma casa de farinha de mandioca.", referencia: "BEZERRA, V. S. Planejando uma casa de farinha de mandioca. Macapá: Embrapa Amapá, 2011. 32 p.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/903652" },
-      { id: 88, ano: "2011", contexto: "Selecionando e conservando maniva-semente de mandioca.", referencia: "BEZERRA, V. S. Selecionando e conservando maniva-semente de mandioca. Macapá: Embrapa Amapá, 2011. 18 p.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Selecionando+e+conservando+maniva-semente+de+mandioca%22" },
-      { id: 89, ano: "2011", contexto: "Cultivares de mandioca para mesa avaliadas no Amapá.", referencia: "CAVALCANTE, E. da S. Características de destaque em cultivares de mandioca para consumo 'in natura' no Amapá. Macapá: Embrapa Amapá, 2003.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/937211" },
-      { id: 90, ano: "2011", contexto: "Desfolhamento de mandioca causado por Colaspis sp. em Porto Grande (AP).", referencia: "JORDÃO, A. L.; NORONHA, A. C. da S. Desfolhamento de mandioca causado por Colaspis sp... CONGRESSO BRASILEIRO DE MANDIOCA, 14., 2011.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Desfolhamento+de+mandioca+causado+por+Colaspis+sp.%22" },
-      { id: 91, ano: "2011", contexto: "Visitantes florais e potenciais polinizadores da mandioca no Amapá.", referencia: "JORDÃO, A. L.; NORONHA, A. C. da S. Visitantes florais e potenciais polinizadores da mandioca... CONGRESSO BRASILEIRO DE MANDIOCA, 14., 2011.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Visitantes+florais+e+potenciais+polinizadores+da+mandioca%22" },
-      { id: 92, ano: "2011", contexto: "Ácaros em folhas de mandioca no Amapá.", referencia: "JORDÃO, A. et al. Ácaros em folhas de mandioca (Manihot esculenta Crantz) no estado do Amapá. CONGRESSO BRASILEIRO DE MANDIOCA, 14., 2011.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22%C3%81caros+em+folhas+de+mandioca+no+estado+do+Amap%C3%A1%22" },
-      { id: 93, ano: "2012", contexto: "Maniva-semente: como selecionar e conservar.", referencia: "BEZERRA, V. S. Maniva-semente: como selecionar e conservar. Macapá: Embrapa Amapá, 2012.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/975102" },
-      { id: 94, ano: "2012", contexto: "Diversidade de ácaros e insetos da mandioca no Amapá e Pará.", referencia: "JORDÃO, A. L. et al. Diversidade de ácaros e insetos da mandioca... CONGRESSO BRASILEIRO DE ENTOMOLOGIA, 24., 2012.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Diversidade+de+%C3%A1caros+e+insetos+da+mandioca%22" },
-      { id: 95, ano: "2012", contexto: "First report of infestation of cassava fruit, by Neosilba perezi in Brazil.", referencia: "STRIKIS, P. C. et al. First report of infestation of cassava fruit, Manihot esculenta, by Neosilba perezi... Brazilian Journal of Biology, 2012.", url: "https://www.scielo.br/j/bjb/" },
-      { id: 96, ano: "2013", contexto: "Tipologia de agricultores no Estado do Amapá com base em indicadores de renda.", referencia: "MELO, L. P. de; BORGES, W. L. Tipologia de agricultores no Estado do Amapá com base em indicadores de renda. CONGRESSO BRASILEIRO DE AGROECOLOGIA, 8., 2013.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Tipologia+de+agricultores+no+Estado+do+Amap%C3%A1+com+base+em+indicadores+de+renda%22" },
-      { id: 97, ano: "2014", contexto: "Componentes produtivos de arroz, feijão-caupi e milho consorciados com mandioca no sistema bragantino no Amapá.", referencia: "CASTRO, G. S. A. et al. Componentes produtivos de arroz, feijão-caupi e milho consorciados com mandioca... Macapá: Embrapa Amapá, 2014.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1004122" },
-      { id: 98, ano: "2014", contexto: "Tipologia dos sistemas de produção dos assentamentos espontâneos e induzidos no Amapá.", referencia: "MARINI, J. A. Tipologia dos sistemas de produção dos assentamentos espontâneos e induzidos... Vivência: Revista de Antropologia, 2014.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Tipologia+dos+sistemas+de+produ%C3%A7%C3%A3o+dos+assentamentos%22" },
-      { id: 99, ano: "2014", contexto: "Nematoides fitoparasitas associados à mandioca na Amazônia brasileira.", referencia: "ROSA, J. M. O. et al. Nematoides fitoparasitas associados à mandioca na Amazônia. Acta Amazonica, 2014.", url: "https://www.scielo.br/j/aa/" },
-      { id: 100, ano: "2015", contexto: "Potencial do uso da casca de mandioca em ração artesanal na criação do tracajá.", referencia: "ALVES, T. A. A. et al. Potencial do uso da casca de mandioca em ração artesanal na criação do tracajá. JORNADA CIENTÍFICA DA EMBRAPA AMAPÁ, 1., 2015.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Potencial+do+uso+da+casca+de+mandioca+em+ra%C3%A7%C3%A3o+artesanal%22" },
-      { id: 101, ano: "2015", contexto: "Soluções tecnológicas e inovação 2015.", referencia: "EMBRAPA. Soluções tecnológicas e inovação 2015. Brasília, DF, 2015.", url: "https://www.embrapa.br/" },
-      { id: 102, ano: "2015", contexto: "Principais produções agrícolas dos estabelecimentos familiares do Amapá.", referencia: "MARINI, J. A. Principais produções agrícolas dos estabelecimentos familiares do Estado do Amapá. Macapá: Embrapa Amapá, 2015.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1032111" },
-      { id: 103, ano: "2015", contexto: "Variedades caboclas de mandioca para o cultivo no Amapá.", referencia: "MARINI, J. A. Variedades caboclas de mandioca para o cultivo no Amapá. Macapá: Embrapa Amapá, 2015.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1054322" },
-      { id: 104, ano: "2015", contexto: "Coleção de mandiocas cultivadas no Pará e Amapá.", referencia: "MARINI, J. A. Coleção de mandiocas cultivadas no Pará e Amapá. Macapá: Embrapa Amapá, 2015.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Cole%C3%A7%C3%A3o+de+mandiocas+cultivadas+no+Par%C3%A1+e+Amap%C3%A1%22" },
-      { id: 105, ano: "2015", contexto: "Cultivares de mandioca indicadas para o plantio nas regiões de Macapá e Mazagão.", referencia: "MARINI, J. A. Cultivares de mandioca indicadas para o plantio nas regiões de Macapá e Mazagão. Macapá: Embrapa Amapá, 2015.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Cultivares+de+mandioca+indicadas+para+o+plantio+nas+regi%C3%B5es+de+Macap%C3%A1+e+Mazag%C3%A3o%22" },
-      { id: 106, ano: "2016", contexto: "Arranjo produtivo local de mandioca no Amapá.", referencia: "MARINI, J. A. Arranjo Produtivo Local de mandioca no Estado do Amapá. Macapá: Embrapa Amapá, 2016.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Arranjo+Produtivo+Local+de+mandioca+no+Estado+do+Amap%C3%A1%22" },
-      { id: 107, ano: "2017", contexto: "Cultivares de mandioca para agricultura familiar.", referencia: "CULTIVARES de mandioca para agricultura familiar: programa 6: Norte. Programa Prosa Rural, 2017.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Cultivares+de+mandioca+para+agricultura+familiar%22" },
-      { id: 108, ano: "2017", contexto: "Ocorrência natural de Beauveria bassiana em broca da haste da mandioca no Amapá.", referencia: "LIMA, A. L. et al. Ocorrência natural de Beauveria bassiana em broca da haste da mandioca... JORNADA CIENTÍFICA DA EMBRAPA AMAPÁ, 3., 2017.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Ocorr%C3%AAncia+natural+de+Beauveria+bassiana+em+broca+da+haste+da+mandioca%22" },
-      { id: 109, ano: "2017", contexto: "O Arranjo Produtivo Local da mandioca e da farinha de mandioca no Amapá.", referencia: "MARINI, J. A. O Arranjo Produtivo Local da mandioca e da farinha de mandioca no Amapá. São Paulo: Amazon, 2017.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22O+Arranjo+Produtivo+Local+da+mandioca+e+da+farinha+de+mandioca+no+Amap%C3%A1%22" },
-      { id: 110, ano: "2017", contexto: "Os Arranjos Produtivos Locais como política pública de desenvolvimento no Brasil.", referencia: "MARINI, J. A. Os Arranjos Produtivos Locais como política pública... Rio de Janeiro: Ipea, 2017.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Os+Arranjos+Produtivos+Locais+como+pol%C3%ADtica+p%C3%BAblica%22" },
-      { id: 111, ano: "2017", contexto: "Estudo territorial estratégico da produção de amido no Amapá.", referencia: "MARINI, J. A. Estudo territorial estratégico da produção de amido no Estado do Amapá. São Paulo: Amazon, 2017.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Estudo+territorial+estrat%C3%A9gico+da+produ%C3%A7%C3%A3o+de+amido+no+Estado+do+Amap%C3%A1%22" },
-      { id: 112, ano: "2017", contexto: "Avaliação da adoção e impactos do sistema de agricultura com uso de corte e queima em Mazagão.", referencia: "MELO, L. P. Avaliação da adoção e impactos do sistema de agricultura... Dissertação - UNIFAP, 2017.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Avalia%C3%A7%C3%A3o+da+ado%C3%A7%C3%A3o+e+impactos+do+sistema+de+agricultura%22" },
-      { id: 113, ano: "2017", contexto: "Contagem de bactérias aeróbias mesófilas em farinhas em diferentes estados da Região Norte.", referencia: "RAIOL, L. da S. et al. Contagem de bactérias aeróbias mesófilas em farinhas... SEMINÁRIO DE INICIAÇÃO CIENTÍFICA DA EMBRAPA, 2017.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1078210" },
-      { id: 114, ano: "2018", contexto: "A mandioca de mesa no estado do Amapá.", referencia: "MARINI, J. A. A mandioca de mesa no estado do Amapá. Colombia, 2018.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+de+mesa+no+estado+do+Amap%C3%A1%22" },
-      { id: 115, ano: "2019", contexto: "Sistema de produção de mandioca da comunidade quilombola de Gurupá, Pará.", referencia: "MODESTO JUNIOR, M. de S. et al. Sistema de produção de mandioca da comunidade quilombola de Gurupá, Pará. Belém: Embrapa, 2019.", url: "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1117520" },
-      { id: 116, ano: "2020", contexto: "Primeiro relato de Chilomima clarkei em mandioca no Amapá.", referencia: "ADAIME, R. et al. First record of Chilomima clarkei in Manihot esculenta in Amapá state, Brazil. EntomoBrasilis, 2020.", url: "https://www.entomobrasilis.org/index.php/ebras/article/view/e914" },
-      { id: 117, ano: "2021", contexto: "Ocorrência do ácaro-verde em cultivo de mandioca no município de Macapá, AP.", referencia: "JORDÃO, A. L. et al. Ocorrência do ácaro-verde Mononychellus tanajoa em cultivo de mandioca no município de Macapá, AP. 2021.", url: "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Ocorr%C3%AAncia+do+%C3%A1caro-verde+Mononychellus+tanajoa+em+cultivo+de+mandioca%22" }
+      {
+    "id": 1,
+    "ano": "-2031",
+    "contexto": "Há mais de 4.000 anos cultivada por civilizações pré-incaicas.",
+    "referencia": "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22"
+  },
+  {
+    "id": 2,
+    "ano": "969",
+    "contexto": "Há mais de 1.000 anos cultivada na ilha do Marajó.",
+    "referencia": "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22"
+  },
+  {
+    "id": 3,
+    "ano": "1946",
+    "contexto": "Início da introdução de materiais procedentes da região Norte e do Nordeste no IAN (Instituto Agronômico do Norte).",
+    "referencia": "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22"
+  },
+  {
+    "id": 4,
+    "ano": "1962",
+    "contexto": "Estudos com mandioca, envolvendo 66 cultivares: Mameluca, Soi, Jurará, Pecuí, Pretinha, Pai Lourenço, Tapioqueira, Amarela, entre outras.",
+    "referencia": "DA PONTE, N. T.; ALBUQUERQUE, M. de .; ANDRADE, S.; LIBONATI, V. F. Estudos com mandioca. Belém: IAN, 1962 (Circular, 6).",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/375629"
+  },
+  {
+    "id": 5,
+    "ano": "1965",
+    "contexto": "Produção e área cultivada de mandioca no Amapá, segundo o IBGE: 2.120 ha; 22 t.",
+    "referencia": "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22"
+  },
+  {
+    "id": 6,
+    "ano": "1966",
+    "contexto": "IRDA (Instituto Regional de Desenvolvimento do Amapá) em convênio com o IAN recebeu 80 cultivares de mandioca, com os quais iniciou a instalação de ensaios experimentais.",
+    "referencia": "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22"
+  },
+  {
+    "id": 7,
+    "ano": "1969",
+    "contexto": "Cultivares de mandioca oriundas do Amapá estudadas pelo IAN: Macaxé, Cauauá e Wick (Oiapoque); Tucunaré e Niplê (Oiapoque e Macapá).",
+    "referencia": "ALBUQUERQUE, M. A mandioca na Amazônia. Belém: Sudam, 1969.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+na+Amaz%C3%B4nia%22"
+  },
+  {
+    "id": 8,
+    "ano": "1972",
+    "contexto": "Resultados de trabalhos experimentais no território federal do Amapá no período de 1972 a 1974.",
+    "referencia": "OLIVEIRA, R. F. de; MORRIL, G. de S. Resultados de trabalhos experimentais no território federal do Amapá no período de 1972 a 1974. Belém, PA: EMBRAPA, 1975.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Resultados+de+trabalhos+experimentais+no+territ%C3%B3rio+federal+do+Amap%C3%A1%22"
+  },
+  {
+    "id": 9,
+    "ano": "1975",
+    "contexto": "Sistemas de produção para mandioca: mandioca + arroz, mandioca + milho no Amapá.",
+    "referencia": "SISTEMAS de produção para mandioca: mandioca + arroz; mandioca + milho; Região Norte. Macapá, AP: EMBRAPA/ACAR-AP, 1975.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Sistemas+de+produ%C3%A7%C3%A3o+para+mandioca%22"
+  },
+  {
+    "id": 10,
+    "ano": "1979",
+    "contexto": "Ensaio de espaçamento de mandioca na Colônia Agrícola do Matapi p/ Embrapa: 10 t/ha, 1,0 m x 0,8 m.",
+    "referencia": "RELATÓRIO TÉCNICO ANUAL DO NÚCLEO DE PESQUISA AGROPECUÁRIA DO AMAPÁ: 1980. Belém, PA: CPATU, 1981.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22RELAT%C3%93RIO+T%C3%89CNICO+ANUAL+DO+N%C3%9ACLEO+DE+PESQUISA+AGROPECU%C3%81RIA+DO+AMAP%C3%81%22"
+  },
+  {
+    "id": 11,
+    "ano": "1980",
+    "contexto": "Sistemas de produção: mandioca + arroz, mandioca + milho, milho-feijão + mandioca, arroz-feijão + mandioca.",
+    "referencia": "SISTEMAS de produção: mandioca + arroz, mandioca + milho, milho-feijão + mandioca, arroz-feijão + mandioca. Belém, PA: EMBRAPA-CPATU; Macapá: ASTER-AP, 1980.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22SISTEMAS+de+produ%C3%A7%C3%A3o%3A+mandioca%22"
+  },
+  {
+    "id": 12,
+    "ano": "1980",
+    "contexto": "Ensaio de espaçamento de mandioca na Colônia Agrícola do Matapi p/ Embrapa: 10 t/ha, 1,0 m x 0,8 m.",
+    "referencia": "RELATÓRIO TÉCNICO ANUAL DO NÚCLEO DE PESQUISA AGROPECUÁRIA DO AMAPÁ: 1980. Belém, PA: CPATU, 1981.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22RELAT%C3%93RIO+T%C3%89CNICO+ANUAL+DO+N%C3%9ACLEO+DE+PESQUISA+AGROPECU%C3%81RIA+DO+AMAP%C3%81%22"
+  },
+  {
+    "id": 13,
+    "ano": "1980",
+    "contexto": "Sistema de Produção na Colônia Agrícola do Matapi p/ avaliar efeito de fertilizantes envolvendo mandioca, milho, arroz e caupi. Produtividade mandioca no melhor tratamento: 16,2 t/ha.",
+    "referencia": "RELATÓRIO TÉCNICO ANUAL DO NÚCLEO DE PESQUISA AGROPECUÁRIA DO AMAPÁ: 1980. Belém, PA: CPATU, 1981.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22RELAT%C3%93RIO+T%C3%89CNICO+ANUAL+DO+N%C3%9ACLEO+DE+PESQUISA+AGROPECU%C3%81RIA+DO+AMAP%C3%81%22"
+  },
+  {
+    "id": 14,
+    "ano": "1980",
+    "contexto": "Cultura mais plantada no Amapá, com área de 2.432 ha e produção de 24.320 t, com as cultivares Marapanim e Farias de produtividade média de 10 t/ha.",
+    "referencia": "RELATÓRIO TÉCNICO ANUAL DO NÚCLEO DE PESQUISA AGROPECUÁRIA DO AMAPÁ: 1980. Belém, PA: CPATU, 1981.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22RELAT%C3%93RIO+T%C3%89CNICO+ANUAL+DO+N%C3%9ACLEO+DE+PESQUISA+AGROPECU%C3%81RIA+DO+AMAP%C3%81%22"
+  },
+  {
+    "id": 15,
+    "ano": "1981",
+    "contexto": "Notícia sobre cultura da mandioca no território do Amapá.",
+    "referencia": "AMARAL, M. A. L. dos; AMARAL, J. B. do. Notícia sobre cultura da mandioca no território do Amapá. Macapá: ASTER - AMAPÁ, 1981.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Not%C3%ADcia+sobre+cultura+da+mandioca+no+territ%C3%B3rio+do+Amap%C3%A1%22"
+  },
+  {
+    "id": 16,
+    "ano": "1982",
+    "contexto": "Sistema de Produção no Campo Exp. de Mazagão p/ avaliar espaçamento e épocas de colheita de mandioca (Pretinha e Mameluca).",
+    "referencia": "RELATÓRIO TÉCNICO ANUAL DO NÚCLEO DA UNIDADE DE EXECUÇÃO DE PESQUISA DE ÂMBITO TERRITORIAL DE MACAPÁ: 1982. Macapá: Uepat, 1984.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22RELAT%C3%93RIO+T%C3%89CNICO+ANUAL+DO+N%C3%9ACLEO+DA+UNIDADE+DE+EXECU%C3%87%C3%83O+DE+PESQUISA%22"
+  },
+  {
+    "id": 17,
+    "ano": "1982",
+    "contexto": "Sistema de Produção no Campo Exp. de Mazagão p/ avaliar consórcio c/ adubação em culturas alimentares (mandioca, arroz, milho e caupi): Pretinha 26 t/ha.",
+    "referencia": "RELATÓRIO TÉCNICO ANUAL DO NÚCLEO DA UNIDADE DE EXECUÇÃO DE PESQUISA DE ÂMBITO TERRITORIAL DE MACAPÁ: 1982. Macapá: Uepat, 1984.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22RELAT%C3%93RIO+T%C3%89CNICO+ANUAL+DO+N%C3%9ACLEO+DA+UNIDADE+DE+EXECU%C3%87%C3%83O+DE+PESQUISA%22"
+  },
+  {
+    "id": 18,
+    "ano": "1982",
+    "contexto": "Sistema de produção de mandioca.",
+    "referencia": "CAVALCANTE, E. da S.; PEREIRA, L. A. F.; SANTOS FILHO, E. M. dos; FIGUEIREDO, F. J. C. Sistema de produção de mandioca. Macapá: EMBRAPA-UEPAT de Macapá, 1982.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Sistema+de+produ%C3%A7%C3%A3o+de+mandioca%22+CAVALCANTE"
+  },
+  {
+    "id": 19,
+    "ano": "1983",
+    "contexto": "Introdução de 133 cultivares de mandioca no Campo Exp. de Mazagão p/ avaliar produção, rendimento e doenças.",
+    "referencia": "RELATÓRIO TÉCNICO ANUAL DO NÚCLEO DA UNIDADE DE EXECUÇÃO DE PESQUISA DE ÂMBITO TERRITORIAL DE MACAPÁ: 1983-1984. Macapá: Uepat, 1985.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22RELAT%C3%93RIO+T%C3%89CNICO+ANUAL+DO+N%C3%9ACLEO+DA+UNIDADE+DE+EXECU%C3%87%C3%83O+DE+PESQUISA%22"
+  },
+  {
+    "id": 20,
+    "ano": "1988",
+    "contexto": "Adaptação de cultivares de mandioca em ecossistemas do Amapá (112 germoplasmas): áreas de terra firme e de várzea em Mazagão; e de Cerrado.",
+    "referencia": "PEQUENO, M.R. Adaptação de cultivares de mandioca em ecossistemas do Amapá. Macapá: Embrapa, 1988.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/item/119"
+  },
+  {
+    "id": 21,
+    "ano": "1989",
+    "contexto": "Aspectos da agropecuaria Amapaense.",
+    "referencia": "IBGE. Aspectos da agropecuaria Amapaense. Amapa, 1989. 36p.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Aspectos+da+agropecuaria+Amapaense%22"
+  },
+  {
+    "id": 22,
+    "ano": "1989",
+    "contexto": "Seleção de mandioca em mata de terra firme no Amapá.",
+    "referencia": "PEQUENO, M. R. Seleção de mandioca em mata de terra firme no Amapá. Macapá: EMBRAPA-UEPAE de Macapá, 1989.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Sele%C3%A7%C3%A3o+de+mandioca+em+mata+de+terra+firme+no+Amap%C3%A1%22"
+  },
+  {
+    "id": 23,
+    "ano": "1990",
+    "contexto": "Receitas de mandioca.",
+    "referencia": "ASTER-AMAPA/COPER (Macapa, Amapa). Receitas de mandioca. Macapá, AP: COPER, 1990. 26p.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Receitas+de+mandioca%22+ASTER"
+  },
+  {
+    "id": 24,
+    "ano": "1991",
+    "contexto": "Adoção de inovações, relações de trabalho e cultura na unidade de produção camponesa - o caso de curiaú no Amapá.",
+    "referencia": "MORAES, J. M. da S. Adoção de inovações, relações de trabalho e cultura na unidade de produção camponesa - o caso de curiau no Amapá. Lavras: ESAL, 1991.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Ado%C3%A7%C3%A3o+de+inova%C3%A7%C3%B5es%2C+rela%C3%A7%C3%B5es+de+trabalho%22"
+  },
+  {
+    "id": 25,
+    "ano": "1992",
+    "contexto": "Diagnóstico da agropecuária amapaense.",
+    "referencia": "ALVES, R. N. B.; ALVES, R. M. M.; MOCHIUTTI, S. Diagnóstico da agropecuária amapaense. Macapá: EMBRAPA-CPAF-Amapá, 1992.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Diagn%C3%B3stico+da+agropecu%C3%A1ria+amapaense%22"
+  },
+  {
+    "id": 26,
+    "ano": "1995",
+    "contexto": "Recomendação da cultivar de mandioca para mata de terra firme no Amapá: cultivar Jurará.",
+    "referencia": "BEZERRA, V. S. Jurará: cultivar de mandioca (Manihot esculenta Crantz) recomendada para mata de terra firme no Amapá. Macapá: Embrapa, 1996.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341864"
+  },
+  {
+    "id": 27,
+    "ano": "1995",
+    "contexto": "Avaliação de resistência à podridão radicular em mandioca no Amapá.",
+    "referencia": "BEZERRA, V. S.; FUKUDA, C. Avaliação de resistência à podridão radicular em mandioca no Estado do Amapá. In: CONGRESSO BRASILEIRO DE FITOPATOLOGIA, 28., 1995.",
+    "url": "https://sistemasdeproducao.cnptia.embrapa.br/FontesHTML/Mandioca/mandioca_amapa/referencias.htm"
+  },
+  {
+    "id": 28,
+    "ano": "1995",
+    "contexto": "Novas alternativas para produção de mandioca nas várzeas amapaenses.",
+    "referencia": "Embrapa-CPAFA/AP. NOVAS alternativas para produção de mandioca nas várzeas amapaenses. Macapá: Embrapa-CPAF/AP, 1995. 1 folder",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22NOVAS+alternativas+para+produ%C3%A7%C3%A3o+de+mandioca%22"
+  },
+  {
+    "id": 29,
+    "ano": "1996",
+    "contexto": "Jurará: cultivar de mandioca (Manihot esculenta Crantz) para o ecossistema mata de terra firme no Estado do Amapá, Brasil.",
+    "referencia": "BEZERRA, V. S. Jurará: cultivar de mandioca... In: CONGRESSO LATINO AMERICANO DE RAÍZES TROPICAIS, 1., 1996.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Jurara%3A+cultivar+de+mandioca%22"
+  },
+  {
+    "id": 30,
+    "ano": "1996",
+    "contexto": "Jurará: cultivar recomendada para mata de terra firme no Amapá, 31 t/ha.",
+    "referencia": "BEZERRA, V. S. Jurará: cultivar de mandioca recomendada para mata de terra firme no Amapá. Macapá: Embrapa, 1996.",
+    "url": "https://www.embrapa.br/busca-de-publicacoes/-/publicacao/349884/jurara-cultivar-de-mandioca-manihot-esculenta-crantz-para-o-ecossistema-mata-de-terra-firme-no-estado-do-amapa-brasil"
+  },
+  {
+    "id": 31,
+    "ano": "1996",
+    "contexto": "Sistemas de plantio de culturas anuais nas várzeas do Amapá.",
+    "referencia": "CAVALCANTE, E. da S. Sistemas de plantio de culturas anuais nas várzeas do Amapá. Macapá: EMBRAPA-CPAF-Amapá, 1996.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Sistemas+de+plantio+de+culturas+anuais+nas+v%C3%A1rzeas+do+Amap%C3%A1%22"
+  },
+  {
+    "id": 32,
+    "ano": "1996",
+    "contexto": "Como selecionar e conservar maniva semente de mandioca.",
+    "referencia": "BEZERRA, V. S. Como selecionar e conservar maniva-semente de mandioca. Macapá: Embrapa-CPAF-Amapá, 1996.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Como+selecionar+e+conservar+maniva-semente+de+mandioca%22"
+  },
+  {
+    "id": 33,
+    "ano": "1996",
+    "contexto": "Maniva semente: seleção, conservação e utilização.",
+    "referencia": "MANIVA-semente: seleção, conservação e utilização. Macapá: Embrapa Amapá, 1996. 1 Folder.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Maniva-semente%3A+sele%C3%A7%C3%A3o%2C+conserva%C3%A7%C3%A3o+e+utiliza%C3%A7%C3%A3o%22"
+  },
+  {
+    "id": 34,
+    "ano": "1996",
+    "contexto": "Curso sobre a cultura da mandioca.",
+    "referencia": "CURSO SOBRE A CULTURA DA MANDIOCA, 1996, Macapá. Apostila. Macapá: Embrapa-CPAF-Amapá, 1996.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22CURSO+SOBRE+A+CULTURA+DA+MANDIOCA%22"
+  },
+  {
+    "id": 35,
+    "ano": "1996",
+    "contexto": "Fabricação de farinha de mandioca: processo mecanizado.",
+    "referencia": "INSTITUTO DE DESENVOLVIMENTO RURAL DO AMAPA. Fabricação de farinha de mandioca: processo mecanizado. Macapa, 1996.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Fabrica%C3%A7%C3%A3o+de+farinha+de+mandioca%3A+processo+mecanizado%22"
+  },
+  {
+    "id": 36,
+    "ano": "1997",
+    "contexto": "Coleta, caracterização botânica e avaliação agronômica de germoplasma de mandioca obtido em área indígena do Oiapoque.",
+    "referencia": "BEZERRA, V. S. Coleta, caracterização botânica e avaliação agronômica de germoplasma... RBM, 1997.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Coleta%2C+caracteriza%C3%A7%C3%A3o+bot%C3%A2nica+e+avalia%C3%A7%C3%A3o+agron%C3%B4mica%22"
+  },
+  {
+    "id": 37,
+    "ano": "1997",
+    "contexto": "Seleção de genótipos de mandioca no cerrado do Amapá.",
+    "referencia": "BEZERRA, V. S. Seleção de genótipos de mandioca no cerrado amapaense. Macapá: Embrapa, 1997.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Sele%C3%A7%C3%A3o+de+gen%C3%B3tipos+de+mandioca+no+cerrado+amapaense%22"
+  },
+  {
+    "id": 38,
+    "ano": "1997",
+    "contexto": "Mãe Joana e Amazonas Embrapa 8: cultivares de mandioca recomendadas para várzeas amapaenses.",
+    "referencia": "BEZERRA, V. S. Mãe Joana e Amazonas Embrapa 8: cultivares de mandioca para várzeas amapaenses. Macapá: Embrapa-CPAF-Amapá, 1997.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22M%C3%A3e+Joana+e+Amazonas+Embrapa+8%22"
+  },
+  {
+    "id": 39,
+    "ano": "1997",
+    "contexto": "Divergência genética multivariada entre genótipos de mandioca coletados em área indígena do Amapá.",
+    "referencia": "FARIAS NETO, J. T. de; BEZERRA, V. S. Divergência genética multivariada... Revista Brasileira de Genética, 1997.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Diverg%C3%AAncia+gen%C3%A9tica+multivariada+entre+gen%C3%B3tipos+de+mandioca%22"
+  },
+  {
+    "id": 40,
+    "ano": "1999",
+    "contexto": "Composição centesimal de misturas à base de fécula de mandioca para confeccção de pão de queijo.",
+    "referencia": "BEZERRA, V. S. Composição centesimal de misturas à base de fécula de mandioca... CONGRESSO BRASILEIRO DE MANDIOCA, 10., 1999.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Composi%C3%A7%C3%A3o+centesimal+de+misturas+%C3%A0+base+de+f%C3%A9cula%22"
+  },
+  {
+    "id": 41,
+    "ano": "1999",
+    "contexto": "Avaliação da qualidade do polvilho durante a fermentação industrial da fécula de mandioca.",
+    "referencia": "PEREIRA, R. G. F. A.; VILELA, E. R.; BEZERRA, V. S. Avaliação da qualidade do polvilho... CONGRESSO BRASILEIRO DE MANDIOCA, 10., 1999.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Avalia%C3%A7%C3%A3o+da+qualidade+do+polvilho+durante+a+fermenta%C3%A7%C3%A3o%22"
+  },
+  {
+    "id": 42,
+    "ano": "1999",
+    "contexto": "Qualidade do polvilho durante a fermentação da fécula de mandioca, com e sem adição de inóculos.",
+    "referencia": "PEREIRA, R. G. F. A.; VILELA, E. R.; BEZERRA, V. S. Qualidade do polvilho... CONGRESSO BRASILEIRO DE MANDIOCA, 10., 1999.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Qualidade+do+polvilho+durante+a+fermenta%C3%A7%C3%A3o+da+f%C3%A9cula+de+mandioca%22"
+  },
+  {
+    "id": 43,
+    "ano": "1999",
+    "contexto": "Catálogo de germoplasma de mandioca coletado no estado do Amapá.",
+    "referencia": "CARDOSO, E. M. R.; MÜLLER, N. R. M. Catálogo de germoplasma de mandioca coletado no estado do Amapá. Belém: Embrapa Amazônia Oriental, 1999.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341864"
+  },
+  {
+    "id": 44,
+    "ano": "2000",
+    "contexto": "Alterações na composição química e cocção de raízes de mandioca minimamente processadas.",
+    "referencia": "BEZERRA, V. S. Alterações na composição química e cocção de raízes de mandioca... Dissertação - UFLA, 2000.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Altera%C3%A7%C3%B5es+na+composi%C3%A7%C3%A3o+qu%C3%ADmica+e+coc%C3%A7%C3%A3o+de+ra%C3%A3zes%22"
+  },
+  {
+    "id": 45,
+    "ano": "2000",
+    "contexto": "Alterações na composição química e cocção de raízes de mandioca após armazenamento sob condições de refrigeração e branqueamento.",
+    "referencia": "BEZERRA, V. S.; PEREIRA, R. G. F. A. Alterações na composição química... CONGRESSO BRASILEIRO DE CIÊNCIA E TECNOLOGIA DE ALIMENTOS, 17., 2000.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Altera%C3%A7%C3%B5es+na+composi%C3%A7%C3%A3o+qu%C3%ADmica+e+coc%C3%A7%C3%A3o+de+ra%C3%ADzes+de+mandioca+ap%C3%B3s+armazenamento%22"
+  },
+  {
+    "id": 46,
+    "ano": "2001",
+    "contexto": "Rendimento de farinha da cultivar Jurará no Amapá, em 32,7%.",
+    "referencia": "BEZERRA, V. S.; SOUZA, W. P. de . Rendimento de farinha da cultivar de mandioca Jurará no estado do Amapá. Macapá: Embrapa Amapá, 2001.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341865"
+  },
+  {
+    "id": 47,
+    "ano": "2001",
+    "contexto": "Características botânico-agronômicas de cultivares de mandioca em cerrado do Amapá.",
+    "referencia": "BEZERRA, V. S. Características botânico-agronômicas de cultivares de mandioca em cerrado amapaense. Macapá: Embrapa Amapá, 2001.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341870"
+  },
+  {
+    "id": 48,
+    "ano": "2001",
+    "contexto": "Recomendação plantio da cultivar Jurará em fileira dupla com caupi no Amapá.",
+    "referencia": "BEZERRA, V. S.; SOUZA, W. P. de . Recomendações ao plantio da mandioca Jurará em fileira dupla com feijão caupi no estado do Amapá. Macapá: Embrapa Amapá, 2001.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341880"
+  },
+  {
+    "id": 49,
+    "ano": "2001",
+    "contexto": "Qualidade e conservação de raízes de mandioca minimamente processadas, branqueadas e embaladas à vácuo sob refrigeração.",
+    "referencia": "BEZERRA, V. S. et al. Qualidade e conservação de raízes de mandioca... SIMPÓSIO LATINO AMERICANO DE CIÊNCIA DE ALIMENTOS, 4., 2001.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Qualidade+e+conserva%C3%A7%C3%A3o+de+ra%C3%ADzes+de+mandioca+minimamente+processadas%22"
+  },
+  {
+    "id": 50,
+    "ano": "2001",
+    "contexto": "Raízes de mandioca minimamente processadas: efeito do branqueamento na qualidade e na conservação sob refrigeração.",
+    "referencia": "BEZERRA, V. S. et al. Raízes de mandioca minimamente processadas... SIMPÓSIO LATINO AMERICANO DE CIÊNCIA DE ALIMENTOS, 4., 2001.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Ra%C3%ADzes+de+mandioca+minimamente+processadas%3A+efeito+do+branqueamento%22"
+  },
+  {
+    "id": 51,
+    "ano": "2001",
+    "contexto": "Laboratório de qualidade da farinha de mandioca da Embrapa Amapá.",
+    "referencia": "LABORATÓRIO de qualidade da farinha de mandioca da Embrapa Amapá. Macapá: Embrapa Amapá, 2001. 1 Folder.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Laborat%C3%B3rio+de+qualidade+da+farinha+de+mandioca+da+Embrapa+Amap%C3%A1%22"
+  },
+  {
+    "id": 52,
+    "ano": "2001",
+    "contexto": "Qualidade da farinha de mandioca: materiais desclassificantes e impurezas.",
+    "referencia": "QUALIDADE da farinha de mandioca: materiais desclassificantes e impurezas. Macapá: Embrapa Amapá, 2001. 1 Folder.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Qualidade+da+farinha+de+mandioca%3A+materiais+desclassificantes%22"
+  },
+  {
+    "id": 53,
+    "ano": "2001",
+    "contexto": "Poder poluente da água residual na fabricação de farinha de mandioca no Amapá.",
+    "referencia": "BEZERRA, V. S. Poder poluente da água residual na fabricação de farinha de mandioca no Estado do Amapá. Macapá: Embrapa Amapá, 2001.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341901"
+  },
+  {
+    "id": 54,
+    "ano": "2001",
+    "contexto": "Poder poluente da manipueira na fabricação de farinha de mandioca no Amapá.",
+    "referencia": "BEZERRA, V. S. Poder poluente da água residual ou manipuera na fabricação de farinha de mandioca. Porto Livre, Santana, 2001.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Poder+poluente+da+%C3%A1gua+residual+ou+manipuera%22"
+  },
+  {
+    "id": 55,
+    "ano": "2002",
+    "contexto": "Caracterização morfológica de cultivares de mandioca no Amapá.",
+    "referencia": "BEZERRA, V. S. Caracterização morfológica de cultivares de mandioca do estado do Amapá. Macapá: Embrapa Amapá, 2002.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/903651"
+  },
+  {
+    "id": 56,
+    "ano": "2002",
+    "contexto": "Teste de cultivares de mandioca no Amapá.",
+    "referencia": "CAVALCANTE, E. da S. Teste de cultivares de mandioca no Amapá. Macapá: Embrapa Amapá, 2002.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/903652"
+  },
+  {
+    "id": 57,
+    "ano": "2002",
+    "contexto": "Isoenzymatic variability of cassava accessions from different regions in Brazil.",
+    "referencia": "CABRAL, B. L. R. et al. Isoenzymatic variability of cassava accessions from different regions in Brazil. Scientia Agricola, 2002.",
+    "url": "https://www.scielo.br/j/sa/"
+  },
+  {
+    "id": 58,
+    "ano": "2002",
+    "contexto": "Cultivares de mandioca recomendadas para o Brasil.",
+    "referencia": "FUKUDA, W. M. G. et al. Cultivares de mandioca recomendadas para o Brasil - 2002. Cruz das Almas: Embrapa Mandioca e Fruticultura, 2002.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/937211"
+  },
+  {
+    "id": 59,
+    "ano": "2002",
+    "contexto": "Estrutura de renda dos produtores da Reserva Extrativista do Rio Cajari, Amapá.",
+    "referencia": "KOURI, J. et al. Estrutura de renda dos produtores da Reserva Extrativista do Rio Cajari, Amapá. Macapá: Embrapa Amapá, 2002.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Estrutura+de+renda+dos+produtores+da+Reserva+Extrativista+do+Rio+Cajari%22"
+  },
+  {
+    "id": 60,
+    "ano": "2002",
+    "contexto": "Valor nutricional da mandioca e transformações pós-colheita.",
+    "referencia": "BEZERRA, V. S. Valor nutricional da mandioca (Manihot esculenta Crantz) e transformações pós-colheita. Macapá: Embrapa Amapá, 2002.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/975102"
+  },
+  {
+    "id": 61,
+    "ano": "2002",
+    "contexto": "Processamento mínimo em mandioca: alterações na qualidade e componentes nutricionais.",
+    "referencia": "BEZERRA, V. S. et al. Processamento mínimo em mandioca: alterações na qualidade... CBCTA, 18., 2002.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Processamento+m%C3%ADnimo+em+mandioca%3A+altera%C3%A7%C3%B5es+na+qualidade%22"
+  },
+  {
+    "id": 62,
+    "ano": "2002",
+    "contexto": "Raízes de mandioca minimamente processadas: efeito do branqueamento na qualidade e na conservação.",
+    "referencia": "BEZERRA, V. S. et al. Raízes de mandioca minimamente processadas... Ciência e Agrotecnologia, 2002.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Ra%C3%ADzes+de+mandioca+minimamente+processadas%3A+efeito+do+branqueamento+na+qualidade%22"
+  },
+  {
+    "id": 63,
+    "ano": "2003",
+    "contexto": "Do campo à mesa: a fécula de mandioca como componente do pão 'brasileirinho'.",
+    "referencia": "BEZERRA, V. S. Do campo à mesa: a fécula de mandioca como componente do pão 'brasileirinho'. Leia, Macapá, 2003.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Do+campo+%C3%A0+mesa%3A+a+f%C3%A9cula+de+mandioca+como+componente%22"
+  },
+  {
+    "id": 64,
+    "ano": "2003",
+    "contexto": "Características de cultivares locais de mandioca no Amapá.",
+    "referencia": "CAVALCANTE, E. da S. Características de cultivares locais de mandioca no Amapá. Macapá: Embrapa Amapá, 2003.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1004122"
+  },
+  {
+    "id": 65,
+    "ano": "2003",
+    "contexto": "Características de destaque em cultivares de mandioca para consumo 'in natura' no Amapá.",
+    "referencia": "CAVALCANTE, E. da S. Características de destaque em cultivares de mandioca para consumo 'in natura' no Amapá. Macapá: Embrapa Amapá, 2003.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1032111"
+  },
+  {
+    "id": 66,
+    "ano": "2003",
+    "contexto": "Cultivo de mandioca para o estado do Amapá. Recomenda: Jurará, Mãe Joana e Amazonas Embrapa 8.",
+    "referencia": "MATTOS, P. L. P. de; BEZERRA, V. S. Cultivo de mandioca para o estado do Amapá. Cruz das Almas: Embrapa Mandioca e Fruticultura, 2003.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1054322"
+  },
+  {
+    "id": 67,
+    "ano": "2003",
+    "contexto": "Aspectos fitotécnicos da cultura da mandioca.",
+    "referencia": "SOUSA, W. P. de; BEZERRA, V. S. Aspectos fitotécnicos da cultura da mandioca. Macapá: Embrapa Amapá, 2003.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Aspectos+fitot%C3%A9cnicos+da+cultura+da+mandioca%22"
+  },
+  {
+    "id": 68,
+    "ano": "2003",
+    "contexto": "Controle de pragas e normas de manuseio de defensivos químicos para a cultura da mandioca.",
+    "referencia": "SOUSA, W. P. de; BEZERRA, V. S. Controle de pragas e normas de manuseio de defensivos químicos... Macapá: Embrapa Amapá, 2003.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Controle+de+pragas+e+normas+de+manuseio+de+defensivos+qu%C3%ADmicos%22"
+  },
+  {
+    "id": 69,
+    "ano": "2003",
+    "contexto": "Recomendações de manejo de plantas daninhas e controle de podridão radicular para a cultura da mandioca.",
+    "referencia": "SOUSA, W. P. de; BEZERRA, V. S. Recomendações de manejo de plantas daninhas... Macapá: Embrapa Amapá, 2003.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Recomenda%C3%B5es+de+manejo+de+plantas+daninhas+e+controle+de+podrid%C3%A3o+radicular%22"
+  },
+  {
+    "id": 70,
+    "ano": "2003",
+    "contexto": "Técnicas para formação de uma lavoura de mandioca para o Estado do Amapá.",
+    "referencia": "SOUSA, W. P. de; BEZERRA, V. S. Técnicas para formação de uma lavoura de mandioca... Macapá: Embrapa Amapá, 2003.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22T%C3%A9cnicas+para+forma%C3%A7%C3%A3o+de+uma+lavoura+de+mandioca%22"
+  },
+  {
+    "id": 71,
+    "ano": "2003",
+    "contexto": "Diagnóstico da cadeia produtiva da mandioca no Amapá.",
+    "referencia": "SOUSA, W. P. de; KOURI, J. Diagnóstico da cadeia produtiva da mandioca no Amapá. Macapá: Embrapa Amapá, 2003.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1078210"
+  },
+  {
+    "id": 72,
+    "ano": "2003",
+    "contexto": "Sistema de produção da mandioca no Amapá.",
+    "referencia": "SOUZA, W. P. de ; BEZERRA, V. S. Sistema de produção da mandioca para o estado do Amapá. Macapá: Embrapa Amapá, 2003.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1117520"
+  },
+  {
+    "id": 73,
+    "ano": "2004",
+    "contexto": "Composição físico-química de variedades de mandioca no Amapá.",
+    "referencia": "BEZERRA, V. S. Composição físico-química de variedades de mandioca no Estado do Amapá. CBCTA, 19., 2004.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Composi%C3%A7%C3%A3o+f%C3%ADsico-qu%C3%ADmica+de+variedades+de+mandioca+no+Estado+do+Amap%C3%A1%22"
+  },
+  {
+    "id": 74,
+    "ano": "2005",
+    "contexto": "Comportamento de cultivares de mandioca à podridão radicular no Amapá.",
+    "referencia": "BEZERRA, V. S. Comportamento de cultivares de mandioca à podridão radicular no Estado do Amapá. XI CONGRESSO BRASILEIRO DE MANDIOCA, 2005.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Comportamento+de+cultivares+de+mandioca+%C3%A0+podrid%C3%A3o+radicular%22"
+  },
+  {
+    "id": 75,
+    "ano": "2005",
+    "contexto": "Composição físico-química de macaxeiras no Amapá.",
+    "referencia": "BEZERRA, V. S. Composição físico-química de macaxeiras no Estado do Amapá. SIMPÓSIO LATINO AMERICANO DE CIÊNCIA E TECNOLOGIA DE ALIMENTOS, 6., 2005.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Composi%C3%A7%C3%A3o+f%C3%ADsico-qu%C3%ADmica+de+macaxeiras+no+Estado+do+Amap%C3%A1%22"
+  },
+  {
+    "id": 76,
+    "ano": "2005",
+    "contexto": "Desempenho de cultivares de mandioca em áreas infectadas com podridão radicular no Amapá.",
+    "referencia": "BEZERRA, V. S. Desempenho de cultivares de mandioca em áreas infectadas com podridão radicular... Macapá: Embrapa Amapá, 2005.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341865"
+  },
+  {
+    "id": 77,
+    "ano": "2005",
+    "contexto": "Processamento mínimo de macaxeira.",
+    "referencia": "BEZERRA, V. S. Processamento mínimo de macaxeira. Macapá: Embrapa Amapá, 2005. 1 Folder.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Processamento+m%C3%ADnimo+de+macaxeira%22"
+  },
+  {
+    "id": 78,
+    "ano": "2005",
+    "contexto": "Valor nutricional de misturas comerciais à base de fécula de mandioca.",
+    "referencia": "BEZERRA, V. S. Valor nutricional de misturas comerciais à base de fécula de mandioca. Revista Brasileira de Mandioca, 2005.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Valor+nutricional+de+misturas+comerciais+%C3%A0+base+de+f%C3%A9cula+de+mandioca%22"
+  },
+  {
+    "id": 79,
+    "ano": "2005",
+    "contexto": "Utilização da mandioca na alimentação animal.",
+    "referencia": "COSTA, N. de L. et al. Utilização da mandioca na alimentação animal. Macapá: Embrapa Amapá, 2005.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341901"
+  },
+  {
+    "id": 80,
+    "ano": "2005",
+    "contexto": "Processamento da mandioca.",
+    "referencia": "PROCESSAMENTO da mandioca - programa 10. Programa prosa rural. Brasília, DF: Embrapa Informação Tecnológica, 2005.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Processamento+da+mandioca+-+programa+10%22"
+  },
+  {
+    "id": 81,
+    "ano": "2006",
+    "contexto": "Farinhas de mandioca seca e mista.",
+    "referencia": "BEZERRA, V. S. Farinhas de mandioca seca e mista. Brasília, DF: Embrapa Informação Tecnológica; Macapá: Embrapa Amapá, 2006.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341870"
+  },
+  {
+    "id": 82,
+    "ano": "2006",
+    "contexto": "Guia de pragas agrícolas para o manejo integrado no Amapá.",
+    "referencia": "JORDÃO, A. L.; SILVA, R. A. da. Guia de pragas agrícolas: para o manejo integrado no Estado do Amapá. Holos Editora, 2006.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Guia+de+pragas+agr%C3%ADcolas%3A+para+o+manejo+integrado%22"
+  },
+  {
+    "id": 83,
+    "ano": "2008",
+    "contexto": "Qualidade e certificação da farinha de mandioca.",
+    "referencia": "QUALIDADE e certificação da farinha de mandioca. Dia de Campo na TV. Brasília, DF: Embrapa, 2008.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/864319"
+  },
+  {
+    "id": 84,
+    "ano": "2010",
+    "contexto": "Avaliação sensorial de variedades de mandioca de mesa com raízes de cores diversas.",
+    "referencia": "BEZERRA, V. S. et al. Avaliação sensorial de variedades de mandioca de mesa com raízes de cores diversas. 2010.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Avalia%C3%A7%C3%A3o+sensorial+de+variedades+de+mandioca+de+mesa+com+ra%C3%ADzes+de+cores+diversas%22"
+  },
+  {
+    "id": 85,
+    "ano": "2010",
+    "contexto": "Desempenho da agricultura familiar na segurança do abastecimento agroalimentar do Amapá.",
+    "referencia": "GONÇALVES, M. C. A. Desempenho da agricultura familiar na segurança do abastecimento... Dissertação - UNIFAP, 2010.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Desempenho+da+agricultura+familiar+na+seguran%C3%A7a+do+abastecimento+agroalimentar+do+Amap%C3%A1%22"
+  },
+  {
+    "id": 86,
+    "ano": "2011",
+    "contexto": "Desempenho produtivo de macaxeiras ou mandiocas de mesa no Amapá.",
+    "referencia": "BEZERRA, V. S. Desempenho produtivo de macaxeiras ou mandiocas de mesa no estado do Amapá. 2° CONGRESSO AMAPAENSE DE INICIAÇÃO CIENTÍFICA, 2011.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/903651"
+  },
+  {
+    "id": 87,
+    "ano": "2011",
+    "contexto": "Planejando uma casa de farinha de mandioca.",
+    "referencia": "BEZERRA, V. S. Planejando uma casa de farinha de mandioca. Macapá: Embrapa Amapá, 2011. 32 p.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/903652"
+  },
+  {
+    "id": 88,
+    "ano": "2011",
+    "contexto": "Selecionando e conservando maniva-semente de mandioca.",
+    "referencia": "BEZERRA, V. S. Selecionando e conservando maniva-semente de mandioca. Macapá: Embrapa Amapá, 2011. 18 p.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Selecionando+e+conservando+maniva-semente+de+mandioca%22"
+  },
+  {
+    "id": 89,
+    "ano": "2011",
+    "contexto": "Cultivares de mandioca para mesa avaliadas no Amapá.",
+    "referencia": "CAVALCANTE, E. da S. Características de destaque em cultivares de mandioca para consumo 'in natura' no Amapá. Macapá: Embrapa Amapá, 2003.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/937211"
+  },
+  {
+    "id": 90,
+    "ano": "2011",
+    "contexto": "Desfolhamento de mandioca causado por Colaspis sp. em Porto Grande (AP).",
+    "referencia": "JORDÃO, A. L.; NORONHA, A. C. da S. Desfolhamento de mandioca causado por Colaspis sp... CONGRESSO BRASILEIRO DE MANDIOCA, 14., 2011.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Desfolhamento+de+mandioca+causado+por+Colaspis+sp.%22"
+  },
+  {
+    "id": 91,
+    "ano": "2011",
+    "contexto": "Visitantes florais e potenciais polinizadores da mandioca no Amapá.",
+    "referencia": "JORDÃO, A. L.; NORONHA, A. C. da S. Visitantes florais e potenciais polinizadores da mandioca... CONGRESSO BRASILEIRO DE MANDIOCA, 14., 2011.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Visitantes+florais+e+potenciais+polinizadores+da+mandioca%22"
+  },
+  {
+    "id": 92,
+    "ano": "2011",
+    "contexto": "Ácaros em folhas de mandioca no Amapá.",
+    "referencia": "JORDÃO, A. et al. Ácaros em folhas de mandioca (Manihot esculenta Crantz) no estado do Amapá. CONGRESSO BRASILEIRO DE MANDIOCA, 14., 2011.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22%C3%81caros+em+folhas+de+mandioca+no+estado+do+Amap%C3%A1%22"
+  },
+  {
+    "id": 93,
+    "ano": "2012",
+    "contexto": "Maniva-semente: como selecionar e conservar.",
+    "referencia": "BEZERRA, V. S. Maniva-semente: como selecionar e conservar. Macapá: Embrapa Amapá, 2012.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/975102"
+  },
+  {
+    "id": 94,
+    "ano": "2012",
+    "contexto": "Diversidade de ácaros e insetos da mandioca no Amapá e Pará.",
+    "referencia": "JORDÃO, A. L. et al. Diversidade de ácaros e insetos da mandioca... CONGRESSO BRASILEIRO DE ENTOMOLOGIA, 24., 2012.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Diversidade+de+%C3%A1caros+e+insetos+da+mandioca%22"
+  },
+  {
+    "id": 95,
+    "ano": "2012",
+    "contexto": "First report of infestation of cassava fruit, by Neosilba perezi in Brazil.",
+    "referencia": "STRIKIS, P. C. et al. First report of infestation of cassava fruit, Manihot esculenta, by Neosilba perezi... Brazilian Journal of Biology, 2012.",
+    "url": "https://www.scielo.br/j/bjb/"
+  },
+  {
+    "id": 96,
+    "ano": "2013",
+    "contexto": "Tipologia de agricultores no Estado do Amapá com base em indicadores de renda.",
+    "referencia": "MELO, L. P. de; BORGES, W. L. Tipologia de agricultores no Estado do Amapá com base em indicadores de renda. CONGRESSO BRASILEIRO DE AGROECOLOGIA, 8., 2013.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Tipologia+de+agricultores+no+Estado+do+Amap%C3%A1+com+base+em+indicadores+de+renda%22"
+  },
+  {
+    "id": 97,
+    "ano": "2014",
+    "contexto": "Componentes produtivos de arroz, feijão-caupi e milho consorciados com mandioca no sistema bragantino no Amapá.",
+    "referencia": "CASTRO, G. S. A. et al. Componentes produtivos de arroz, feijão-caupi e milho consorciados com mandioca... Macapá: Embrapa Amapá, 2014.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1004122"
+  },
+  {
+    "id": 98,
+    "ano": "2014",
+    "contexto": "Tipologia dos sistemas de produção dos assentamentos espontâneos e induzidos no Amapá.",
+    "referencia": "MARINI, J. A. Tipologia dos sistemas de produção dos assentamentos espontâneos e induzidos... Vivência: Revista de Antropologia, 2014.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Tipologia+dos+sistemas+de+produ%C3%A7%C3%A3o+dos+assentamentos%22"
+  },
+  {
+    "id": 99,
+    "ano": "2014",
+    "contexto": "Nematoides fitoparasitas associados à mandioca na Amazônia brasileira.",
+    "referencia": "ROSA, J. M. O. et al. Nematoides fitoparasitas associados à mandioca na Amazônia. Acta Amazonica, 2014.",
+    "url": "https://www.scielo.br/j/aa/"
+  },
+  {
+    "id": 100,
+    "ano": "2015",
+    "contexto": "Potencial do uso da casca de mandioca em ração artesanal na criação do tracajá.",
+    "referencia": "ALVES, T. A. A. et al. Potencial do uso da casca de mandioca em ração artesanal na criação do tracajá. JORNADA CIENTÍFICA DA EMBRAPA AMAPÁ, 1., 2015.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Potencial+do+uso+da+casca+de+mandioca+em+ra%C3%A7%C3%A3o+artesanal%22"
+  },
+  {
+    "id": 101,
+    "ano": "2015",
+    "contexto": "Soluções tecnológicas e inovação 2015.",
+    "referencia": "EMBRAPA. Soluções tecnológicas e inovação 2015. Brasília, DF, 2015.",
+    "url": "https://www.embrapa.br/"
+  },
+  {
+    "id": 102,
+    "ano": "2015",
+    "contexto": "Principais produções agrícolas dos estabelecimentos familiares do Amapá.",
+    "referencia": "MARINI, J. A. Principais produções agrícolas dos estabelecimentos familiares do Estado do Amapá. Macapá: Embrapa Amapá, 2015.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1032111"
+  },
+  {
+    "id": 103,
+    "ano": "2015",
+    "contexto": "Variedades caboclas de mandioca para o cultivo no Amapá.",
+    "referencia": "MARINI, J. A. Variedades caboclas de mandioca para o cultivo no Amapá. Macapá: Embrapa Amapá, 2015.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1054322"
+  },
+  {
+    "id": 104,
+    "ano": "2015",
+    "contexto": "Coleção de mandiocas cultivadas no Pará e Amapá.",
+    "referencia": "MARINI, J. A. Coleção de mandiocas cultivadas no Pará e Amapá. Macapá: Embrapa Amapá, 2015.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Cole%C3%A7%C3%A3o+de+mandiocas+cultivadas+no+Par%C3%A1+e+Amap%C3%A1%22"
+  },
+  {
+    "id": 105,
+    "ano": "2015",
+    "contexto": "Cultivares de mandioca indicadas para o plantio nas regiões de Macapá e Mazagão.",
+    "referencia": "MARINI, J. A. Cultivares de mandioca indicadas para o plantio nas regiões de Macapá e Mazagão. Macapá: Embrapa Amapá, 2015.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Cultivares+de+mandioca+indicadas+para+o+plantio+nas+regi%C3%B5es+de+Macap%C3%A1+e+Mazag%C3%A3o%22"
+  },
+  {
+    "id": 106,
+    "ano": "2016",
+    "contexto": "Arranjo produtivo local de mandioca no Amapá.",
+    "referencia": "MARINI, J. A. Arranjo Produtivo Local de mandioca no Estado do Amapá. Macapá: Embrapa Amapá, 2016.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Arranjo+Produtivo+Local+de+mandioca+no+Estado+do+Amap%C3%A1%22"
+  },
+  {
+    "id": 107,
+    "ano": "2017",
+    "contexto": "Cultivares de mandioca para agricultura familiar.",
+    "referencia": "CULTIVARES de mandioca para agricultura familiar: programa 6: Norte. Programa Prosa Rural, 2017.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Cultivares+de+mandioca+para+agricultura+familiar%22"
+  },
+  {
+    "id": 108,
+    "ano": "2017",
+    "contexto": "Ocorrência natural de Beauveria bassiana em broca da haste da mandioca no Amapá.",
+    "referencia": "LIMA, A. L. et al. Ocorrência natural de Beauveria bassiana em broca da haste da mandioca... JORNADA CIENTÍFICA DA EMBRAPA AMAPÁ, 3., 2017.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Ocorr%C3%AAncia+natural+de+Beauveria+bassiana+em+broca+da+haste+da+mandioca%22"
+  },
+  {
+    "id": 109,
+    "ano": "2017",
+    "contexto": "O Arranjo Produtivo Local da mandioca e da farinha de mandioca no Amapá.",
+    "referencia": "MARINI, J. A. O Arranjo Produtivo Local da mandioca e da farinha de mandioca no Amapá. São Paulo: Amazon, 2017.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22O+Arranjo+Produtivo+Local+da+mandioca+e+da+farinha+de+mandioca+no+Amap%C3%A1%22"
+  },
+  {
+    "id": 110,
+    "ano": "2017",
+    "contexto": "Os Arranjos Produtivos Locais como política pública de desenvolvimento no Brasil.",
+    "referencia": "MARINI, J. A. Os Arranjos Produtivos Locais como política pública... Rio de Janeiro: Ipea, 2017.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Os+Arranjos+Produtivos+Locais+como+pol%C3%ADtica+p%C3%BAblica%22"
+  },
+  {
+    "id": 111,
+    "ano": "2017",
+    "contexto": "Estudo territorial estratégico da produção de amido no Amapá.",
+    "referencia": "MARINI, J. A. Estudo territorial estratégico da produção de amido no Estado do Amapá. São Paulo: Amazon, 2017.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Estudo+territorial+estrat%C3%A9gico+da+produ%C3%A7%C3%A3o+de+amido+no+Estado+do+Amap%C3%A1%22"
+  },
+  {
+    "id": 112,
+    "ano": "2017",
+    "contexto": "Avaliação da adoção e impactos do sistema de agricultura com uso de corte e queima em Mazagão.",
+    "referencia": "MELO, L. P. Avaliação da adoção e impactos do sistema de agricultura... Dissertação - UNIFAP, 2017.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Avalia%C3%A7%C3%A3o+da+ado%C3%A7%C3%A3o+e+impactos+do+sistema+de+agricultura%22"
+  },
+  {
+    "id": 113,
+    "ano": "2017",
+    "contexto": "Contagem de bactérias aeróbias mesófilas em farinhas em diferentes estados da Região Norte.",
+    "referencia": "RAIOL, L. da S. et al. Contagem de bactérias aeróbias mesófilas em farinhas... SEMINÁRIO DE INICIAÇÃO CIENTÍFICA DA EMBRAPA, 2017.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1078210"
+  },
+  {
+    "id": 114,
+    "ano": "2018",
+    "contexto": "A mandioca de mesa no estado do Amapá.",
+    "referencia": "MARINI, J. A. A mandioca de mesa no estado do Amapá. Colombia, 2018.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22A+mandioca+de+mesa+no+estado+do+Amap%C3%A1%22"
+  },
+  {
+    "id": 115,
+    "ano": "2019",
+    "contexto": "Sistema de produção de mandioca da comunidade quilombola de Gurupá, Pará.",
+    "referencia": "MODESTO JUNIOR, M. de S. et al. Sistema de produção de mandioca da comunidade quilombola de Gurupá, Pará. Belém: Embrapa, 2019.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1117520"
+  },
+  {
+    "id": 116,
+    "ano": "2020",
+    "contexto": "Primeiro relato de Chilomima clarkei em mandioca no Amapá.",
+    "referencia": "ADAIME, R. et al. First record of Chilomima clarkei in Manihot esculenta in Amapá state, Brazil. EntomoBrasilis, 2020.",
+    "url": "https://www.entomobrasilis.org/index.php/ebras/article/view/e914"
+  },
+  {
+    "id": 117,
+    "ano": "2021",
+    "contexto": "Ocorrência do ácaro-verde em cultivo de mandioca no município de Macapá, AP.",
+    "referencia": "JORDÃO, A. L. et al. Ocorrência do ácaro-verde Mononychellus tanajoa em cultivo de mandioca no município de Macapá, AP. 2021.",
+    "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Ocorr%C3%AAncia+do+%C3%A1caro-verde+Mononychellus+tanajoa+em+cultivo+de+mandioca%22"
+  },
+  {
+    "id": 118,
+    "ano": "2024",
+    "contexto": "Isolamento, análise genômica e localização tecidular de Ceratobasidium theobromae, um novo patógeno de encontro da mandioca no Sudeste Asiático.",
+    "referencia": "GIL-ORDÓÑEZ, A., PARDO, J.M., SHEAT, S. et al. Isolation, genome analysis and tissue localization of Ceratobasidium theobromae, a new encounter pathogen of cassava in Southeast Asia. Sci Rep 14, 18139 (2024).",
+    "url": "https://doi.org/10.1038/s41598-024-69061-8"
+  },
+  {
+    "id": 119,
+    "ano": "2026",
+    "contexto": "Rhizoctonia theobromae associado a um surto severo de vassoura-de-bruxa em mandioca na floresta tropical brasileira e evidências de sua origem no Sudeste Asiático.",
+    "referencia": "OLIVEIRA S. A. S., SHEAT S., MARGARIA P., LIMA A. L., SANTOS J. A., ROCHA H. S., SILVEIRA H. F., RAMOS DE JESUS C. e WINTER S. (2026) Associação de Rhizoctonia theobromae com surto de vassoura-de-mandioca no Brasil e parentesco genético com isolados do Sudeste Asiático. Frente. Ciência das plantas. 17:1799146.",
+    "url": "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2026.1799146/full"
+  }
     ];
 
 
