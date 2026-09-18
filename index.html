@@ -75,10 +75,12 @@
       .search-box {
         flex: 1;
         min-width: 250px;
+        display: flex;
+        gap: 8px;
       }
 
       .search-box input {
-        width: 100%;
+        flex: 1;
         padding: 12px 15px;
         border: 1px solid var(--border-color);
         border-radius: 8px;
@@ -89,6 +91,24 @@
 
       .search-box input:focus {
         border-color: var(--primary-color);
+      }
+
+      .btn-clear {
+        padding: 0 15px;
+        border: 1px solid var(--border-color);
+        background-color: #fff;
+        color: #666;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
+      .btn-clear:hover {
+        background-color: #e0e0e0;
+        color: #333;
       }
 
       .page-size-selector {
@@ -211,7 +231,7 @@
         justify-content: center;
         align-items: center;
         gap: 6px;
-        margin: 30px 0 10px;
+        margin: 30px 0 60px;
         flex-wrap: wrap;
       }
 
@@ -261,6 +281,7 @@
     <div class="controls">
       <div class="search-box">
         <input type="text" id="searchInput" placeholder="Buscar por ano, cultivar, autor ou evento..." onkeyup="onSearchChange()">
+        <button type="button" class="btn-clear" onclick="clearSearch()">Limpar</button>
       </div>
       
       <div class="page-size-selector">
@@ -281,12 +302,10 @@
     <!-- Navegação / Paginação -->
     <div class="pagination" id="paginationContainer"></div>
   </div>
-          </div>
 
-        <footer style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; font-size: 0.75rem; background-color: #ffffff; padding: 10px 0; z-index: 1000;">
+  <footer style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; font-size: 0.75rem; background-color: #ffffff; padding: 10px 0; z-index: 1000; box-shadow: 0 -2px 5px rgba(0,0,0,0.05);">
     <p style="margin: 0;">&copy; Embrapa 2026. Linha do Tempo da Pesquisa com Mandioca no Amapá. <small>(Repositório: ACGÓES, 2021)</small></p>
-</footer>
-    </div>
+  </footer>
 
   <script>
     // Base com os 117 registros da pesquisa com mandioca no Amapá
@@ -483,19 +502,19 @@
       }
 
       const nextBtn = document.createElement('button');
-      nextBtn.innerHTML = 'Próximo &#9658;';
+      nextBtn.innerHTML = 'Próxima &#9658;';
       nextBtn.disabled = currentPage === totalPages;
       nextBtn.onclick = () => goToPage(currentPage + 1);
       paginationContainer.appendChild(nextBtn);
     }
 
-    function createPageButton(pageNumber) {
+    function createPageButton(page) {
       const btn = document.createElement('button');
-      btn.innerText = pageNumber;
-      if (pageNumber === currentPage) {
-        btn.classList.add('active');
+      btn.innerText = page;
+      if (page === currentPage) {
+        btn.className = 'active';
       }
-      btn.onclick = () => goToPage(pageNumber);
+      btn.onclick = () => goToPage(page);
       return btn;
     }
 
@@ -511,16 +530,23 @@
       renderTimeline();
     }
 
+    function clearSearch() {
+      document.getElementById('searchInput').value = '';
+      currentPage = 1;
+      filterData();
+      renderTimeline();
+    }
+
     function onPageSizeChange() {
-      pageSize = document.getElementById('pageSizeSelect').value;
+      const select = document.getElementById('pageSizeSelect');
+      pageSize = select.value;
       currentPage = 1;
       renderTimeline();
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      filterData();
-      renderTimeline();
-    });
+    // Inicialização
+    filterData();
+    renderTimeline();
   </script>
 </body>
 </html>
