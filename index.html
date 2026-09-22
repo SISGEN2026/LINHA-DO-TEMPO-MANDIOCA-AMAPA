@@ -338,25 +338,6 @@
         padding: 8px 6px;
         color: #888;
       }
-      .reload-container {
-      text-align: center;
-       margin: 20px 0 40px 0;
-      }
-      .btn-reload {
-       background-color: var(--primary-color, #004993);
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 1rem;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: background 0.2s;
-      }
-    .btn-reload:hover {
-       background-color: #1b5e20;
-      }
     </style>
 </head>
 <body>
@@ -409,9 +390,6 @@
   <footer style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; font-size: 0.75rem; background-color: #ffffff; padding: 10px 0; z-index: 1000; box-shadow: 0 -2px 5px rgba(0,0,0,0.05);">
     <p style="margin: 0;">&copy; Embrapa 2026. Linha do Tempo da Pesquisa com Mandioca no Amapá. <small>(Repositório: ACGÓES, 2026)</small></p>
   </footer>
-<div class="reload-container" id="reloadContainer">
-  <button type="button" class="btn-reload" onclick="recarregarDadosTela()">🔄 Recarregar Dados</button>
-</div>
   <script>
     // Palavra-passe do editor
     const SENHA_EDITOR = "Xt5kwfxi#";
@@ -426,7 +404,6 @@
           document.getElementById('btnExportar').style.display = 'inline-block';
           document.getElementById('btnImportar').style.display = 'inline-block';
           document.getElementById('btnEditorLogin').textContent = '🔓 Sair do Editor';
-          
           renderTimeline();
           alert("Acesso de editor concedido com sucesso!");
         } else if (senha !== null) {
@@ -446,7 +423,7 @@
 
     // Base permanente completa com os registros históricos
     const dadosIniciais = [
-        {
+      {
     "id": 1,
     "ano": "-2031",
     "contexto": "Há mais de 4.000 anos cultivada por civilizações pré-incaicas.",
@@ -622,6 +599,13 @@
     "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22Diagn%C3%B3stico+da+agropecu%C3%A1ria+amapaense%22"
   },
   {
+    "id": 26,
+    "ano": "1996",
+    "contexto": "Recomendação da cultivar de mandioca para mata de terra firme no Amapá: cultivar Jurará.",
+    "referencia": "BEZERRA, V. S. Jurará: cultivar de mandioca (Manihot esculenta Crantz) recomendada para mata de terra firme no Amapá. Macapá: Embrapa, 1996.",
+    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341864"
+  },
+  {
     "id": 27,
     "ano": "1995",
     "contexto": "Avaliação de resistência à podridão radicular em mandioca no Amapá.",
@@ -634,13 +618,6 @@
     "contexto": "Novas alternativas para produção de mandioca nas várzeas amapaenses.",
     "referencia": "Embrapa-CPAFA/AP. NOVAS alternativas para produção de mandioca nas várzeas amapaenses. Macapá: Embrapa-CPAF/AP, 1995. 1 folder",
     "url": "https://www.bdpa.cnptia.embrapa.br/consulta/busca?b=ad&busca=%22NOVAS+alternativas+para+produ%C3%A7%C3%A3o+de+mandioca%22"
-  },
-  {
-    "id": 26,
-    "ano": "1996",
-    "contexto": "Recomendação da cultivar de mandioca para mata de terra firme no Amapá: cultivar Jurará.",
-    "referencia": "BEZERRA, V. S. Jurará: cultivar de mandioca (Manihot esculenta Crantz) recomendada para mata de terra firme no Amapá. Macapá: Embrapa, 1996.",
-    "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/341864"
   },
   {
     "id": 29,
@@ -1348,8 +1325,8 @@
     "contexto": "Página da Embrapa sobre a situação atual da vassoura-de-bruxa da mandioca.",
     "referencia": "EMBRAPA MANDIOCA E FRUTICULTURA. Vassoura-de-bruxa da mandioca. [S. l.]: Embrapa, [2026?]. Disponível em: https://www.embrapa.br/web/mandioca-e-fruticultura/vassoura-de-bruxa-da-mandioca. Acesso em: 21 set. 2026.",
     "url": "https://www.embrapa.br/web/mandioca-e-fruticultura/vassoura-de-bruxa-da-mandioca"
-  },
-  {
+  }
+{
     "id": 130,
     "ano": "2026",
     "contexto": "Pesquisa sobre diversidade genética e estrutura populacional em genótipos de mandioca de bancos de germoplasma ativos (BAG) utilizando a tecnologia de matrizes de diversidade (DArT).",
@@ -1625,13 +1602,8 @@
     // Inicialização da página
     filterData();
     renderTimeline();
-    function recarregarDadosTela() {
-  document.getElementById('searchInput').value = '';
-  paginaAtual = 1;
-  renderTimeline();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
   </script>
 </body>
 </html>
+
 
