@@ -338,6 +338,25 @@
         padding: 8px 6px;
         color: #888;
       }
+      .reload-container {
+      text-align: center;
+       margin: 20px 0 40px 0;
+      }
+      .btn-reload {
+       background-color: var(--primary-color, #004993);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background 0.2s;
+      }
+    .btn-reload:hover {
+       background-color: #1b5e20;
+      }
     </style>
 </head>
 <body>
@@ -390,6 +409,9 @@
   <footer style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; font-size: 0.75rem; background-color: #ffffff; padding: 10px 0; z-index: 1000; box-shadow: 0 -2px 5px rgba(0,0,0,0.05);">
     <p style="margin: 0;">&copy; Embrapa 2026. Linha do Tempo da Pesquisa com Mandioca no Amapá. <small>(Repositório: ACGÓES, 2026)</small></p>
   </footer>
+<div class="reload-container" id="reloadContainer">
+  <button type="button" class="btn-reload" onclick="recarregarDadosTela()">🔄 Recarregar Dados</button>
+</div>
   <script>
     // Palavra-passe do editor
     const SENHA_EDITOR = "Xt5kwfxi#";
@@ -404,6 +426,7 @@
           document.getElementById('btnExportar').style.display = 'inline-block';
           document.getElementById('btnImportar').style.display = 'inline-block';
           document.getElementById('btnEditorLogin').textContent = '🔓 Sair do Editor';
+          
           renderTimeline();
           alert("Acesso de editor concedido com sucesso!");
         } else if (senha !== null) {
@@ -1595,6 +1618,13 @@
     // Inicialização da página
     filterData();
     renderTimeline();
+    function recarregarDadosTela() {
+  document.getElementById('searchInput').value = '';
+  paginaAtual = 1;
+  renderTimeline();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
   </script>
 </body>
 </html>
+
